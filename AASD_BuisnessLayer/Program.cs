@@ -16,25 +16,25 @@ namespace AASD_BuisnessLayer
         {
             //DbManager dbManage = new DbManager
 
-            SearchFactory searchFactory = new SearchFactory();
-            ISearchBehaviour bingSearch = searchFactory.getSearch("Bing");
+            //SearchFactory searchFactory = new SearchFactory();
+            //ISearchBehaviour bingSearch = searchFactory.getSearch("Bing");
 
-            string request = "Microsoft products";
-            SearchEngine fullSearchEngine = new SearchEngine_Standart(new DateFilter(), bingSearch);
-            object unfilteredData = fullSearchEngine.GetResults(request);
-            //dbManage.PersistData
+            //string request = "Microsoft products";
+            //SearchEngine fullSearchEngine = new SearchEngine_Standart(new DateFilter(), bingSearch);
+            //object unfilteredData = fullSearchEngine.GetResults(request);
+            ////dbManage.PersistData
 
-            object filteredData = fullSearchEngine.FilterData(unfilteredData);
+            //object filteredData = fullSearchEngine.FilterData(unfilteredData);
             
-            //fullSearchEngine.search = new GoogLe
-            fullSearchEngine.filter = new DuplicateDataFilter();
-            filteredData = fullSearchEngine.FilterData(filteredData);
+            ////fullSearchEngine.search = new GoogLe
+            //fullSearchEngine.filter = new DuplicateDataFilter();
+            //filteredData = fullSearchEngine.FilterData(filteredData);
 
-            fullSearchEngine.filter = new RelevanceFilter();
-            filteredData = fullSearchEngine.FilterData(filteredData);
+            //fullSearchEngine.filter = new RelevanceFilter();
+            //filteredData = fullSearchEngine.FilterData(filteredData);
 
-            fullSearchEngine.search = new NeuralNetworkSearch();
-            filteredData = fullSearchEngine.GetResults(request);
+            //fullSearchEngine.search = new NeuralNetworkSearch();
+            //filteredData = fullSearchEngine.GetResults(request);
 
             
         }

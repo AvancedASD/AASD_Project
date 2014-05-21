@@ -49,11 +49,16 @@
     <Compile Include="BuisnessLayer_Models\Concrete\SearchBehaviors\BingSearch.cs" />
     <Compile Include="BuisnessLayer_Models\Concrete\SearchBehaviors\NeuralNetworkSearch.cs" />
     <Compile Include="BuisnessLayer_Models\Concrete\SearchEngines\SearchEngine_Standart.cs" />
+    <Compile Include="Entities\FilterDetails.cs" />
+    <Compile Include="Entities\QueryResult.cs" />
+    <Compile Include="Entities\QueryDetails.cs" />
+    <Compile Include="Enumeration\QueryResultType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entities\" />
+    <Folder Include="TransferObjects\" />
+    <Folder Include="Translators\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

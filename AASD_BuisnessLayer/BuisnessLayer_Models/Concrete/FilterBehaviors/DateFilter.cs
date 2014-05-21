@@ -7,7 +7,8 @@ using AASD_BuisnessLayer.BuisnessLayer_Models.Abstract;
 
 namespace AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.FilterBehaviors
 {
-    //This is just an example. Later we can delete this filter and create new filters
+    //This is just an example. Later we can delete this filter and create new filters- IVAN
+    // FOr the time being any one of the search class is enough, we will deal with all the Filter related business functionality here. - Santosh
     class DateFilter : IFilterBehavior
     {
         //Delete old data

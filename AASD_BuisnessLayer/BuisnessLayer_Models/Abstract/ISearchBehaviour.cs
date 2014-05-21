@@ -5,8 +5,8 @@ using System.Text;
 
 namespace AASD_BuisnessLayer.BuisnessLayer_Models.Abstract
 {
-    interface ISearchBehaviour
+    public interface ISearchBehaviour
     {
-        public Object GetResults(Object request);
+        Object GetResults(Object request);
     }
 }
