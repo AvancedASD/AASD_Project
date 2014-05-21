@@ -11,7 +11,7 @@ namespace AASD_DataTransferObject.DTOs
     public class QueryDTO
     {
         public string searchQuery { get; set; }
-        //public string searchQuery { get; set; }
+        ////public string searchQuery { get; set; }
         //public string searchQuery { get; set; }
     }
 }
