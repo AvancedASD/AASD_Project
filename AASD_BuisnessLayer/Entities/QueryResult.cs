@@ -42,7 +42,7 @@ namespace AASD_BuisnessLayer.Entities
         public String Url { get; set; }
 
         /// <summary>
-        /// Says whether filtered or Unfiltere data 
+        /// Says whether filtered or Unfiltered data 
         /// </summary>
         public QueryResultType ResulType { get; set; }
 
