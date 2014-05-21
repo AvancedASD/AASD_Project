@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchEngines;
-using AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.FilterBehaviors;
-using AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchBehaviors;
-using AASD_BuisnessLayer.BuisnessLayer_Models.Abstract;
 
 
-namespace AASD_BuisnessLayer
+namespace AASD_WebUI
 {
     class Program
     {
