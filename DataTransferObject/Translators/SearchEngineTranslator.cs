@@ -13,13 +13,13 @@ namespace AASD_DataTransferObject.Translators
     /// </summary>
     public class SearchEngineTranslator
     {
-        public QueryDTO QueryResultsEntityToDto(QueryDetails entity)
+        public QueryDto QueryResultsEntityToDto(QueryDetails entity)
         {
-            QueryDTO x = null;
+            QueryDto x = null;
 
             if (entity != null)
             {
-                x = new QueryDTO()
+                x = new QueryDto()
                 {
                     searchQuery = entity.SearchQuery,
                 };

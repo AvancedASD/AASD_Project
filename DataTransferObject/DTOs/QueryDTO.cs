@@ -8,7 +8,7 @@ namespace AASD_DataTransferObject.DTOs
     /// <summary>
     /// Used for transfering the data between and within the layers
     /// </summary>
-    public class QueryDTO
+    public class QueryDto
     {
         public string searchQuery { get; set; }
         ////public string searchQuery { get; set; }
