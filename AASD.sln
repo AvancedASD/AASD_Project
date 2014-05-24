@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AASD_WebUI", "AASD_WebUI\AA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AASD_Data Access Layer", "AASD_Data Access Layer\AASD_Data Access Layer.csproj", "{C721DA3A-B57D-4163-BA92-8878BAF61E75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AASD_DataTransferObject", "DataTransferObject\AASD_DataTransferObject.csproj", "{EF9A69EA-896B-49E7-AC15-5236324667D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AASD_DataTransferObject", "AASD_DataTransferObject\AASD_DataTransferObject.csproj", "{EF9A69EA-896B-49E7-AC15-5236324667D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AASD_BingAPIService", "BingAPIService\AASD_BingAPIService.csproj", "{93491D09-8779-45F4-A088-09B50FBCD001}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AASD_BingAPIService", "AASD_BingAPIService\AASD_BingAPIService.csproj", "{93491D09-8779-45F4-A088-09B50FBCD001}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -110,7 +110,7 @@
     <Folder Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataTransferObject\AASD_DataTransferObject.csproj">
+    <ProjectReference Include="..\AASD_DataTransferObject\AASD_DataTransferObject.csproj">
       <Project>{ef9a69ea-896b-49e7-ac15-5236324667d2}</Project>
       <Name>AASD_DataTransferObject</Name>
     </ProjectReference>
