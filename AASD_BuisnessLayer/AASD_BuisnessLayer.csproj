@@ -53,9 +53,9 @@
     <Compile Include="BuisnessLayer_Models\Concrete\SearchBehaviors\BingSearch.cs" />
     <Compile Include="BuisnessLayer_Models\Concrete\SearchBehaviors\NeuralNetworkSearch.cs" />
     <Compile Include="BuisnessLayer_Models\Concrete\SearchEngines\SearchEngine_Standart.cs" />
-    <Compile Include="Entities\FilterDetails.cs" />
-    <Compile Include="Entities\QueryResult.cs" />
-    <Compile Include="Entities\QueryDetails.cs" />
+    <Compile Include="Entities\Filter.cs" />
+    <Compile Include="Entities\Result.cs" />
+    <Compile Include="Entities\Query.cs" />
     <Compile Include="Enumeration\QueryResultType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

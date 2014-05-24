@@ -8,12 +8,12 @@ namespace AASD_BuisnessLayer.Entities
     /// <summary>
     /// This class contains the details of search query
     /// </summary>
-    public class QueryDetails
+    public class Query
     {
         /// <summary>
         ///Search ID mapped to a particular search
         /// </summary>
-        public Guid QueryID { get; set; }
+        public Guid QueryId { get; set; }
 
         /// <summary>
         ///Bing search query Sample Values : xbox

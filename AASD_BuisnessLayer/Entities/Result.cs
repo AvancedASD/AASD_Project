@@ -9,17 +9,17 @@ namespace AASD_BuisnessLayer.Entities
     /// <summary>
     /// This class contains a particular result record obtained from a search query results
     /// </summary>
-    public class QueryResult
+    public class Result
     {
         /// <summary>
         /// This is the Id of the particular result record
         /// </summary>
-        public Guid ResultID { get; set; }
+        public Guid ResultId { get; set; }
 
         /// <summary>
         /// mapped to a particular Query Search
         /// </summary>
-        public Guid QueryID { get; set; }
+        public Guid QueryId { get; set; }
 
         /// <summary>
         /// This contains the title of the result
