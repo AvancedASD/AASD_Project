@@ -44,15 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuisnessLayer_Models\Abstract\IDisplayBehaviour.cs" />
     <Compile Include="BuisnessLayer_Models\Abstract\IFilterBehaviour.cs" />
     <Compile Include="BuisnessLayer_Models\Abstract\ISearchBehaviour.cs" />
     <Compile Include="BuisnessLayer_Models\Abstract\SearchEngine.cs" />
-    <Compile Include="BuisnessLayer_Models\Concrete\FilterBehaviors\DateFilter.cs" />
+    <Compile Include="BuisnessLayer_Models\Concrete\DisplayBehaviour\DisplayResult.cs" />
+    <Compile Include="BuisnessLayer_Models\Concrete\FilterBehaviors\DataFilter.cs" />
     <Compile Include="BuisnessLayer_Models\Concrete\FilterBehaviors\DuplicateDataFilter.cs" />
     <Compile Include="BuisnessLayer_Models\Concrete\FilterBehaviors\RelevanceFilter.cs" />
     <Compile Include="BuisnessLayer_Models\Concrete\SearchBehaviors\BingSearch.cs" />
     <Compile Include="BuisnessLayer_Models\Concrete\SearchBehaviors\NeuralNetworkSearch.cs" />
     <Compile Include="BuisnessLayer_Models\Concrete\SearchEngines\SearchEngine_Standart.cs" />
+    <Compile Include="Entities\Display.cs" />
     <Compile Include="Entities\Filter.cs" />
     <Compile Include="Entities\Result.cs" />
     <Compile Include="Entities\Query.cs" />

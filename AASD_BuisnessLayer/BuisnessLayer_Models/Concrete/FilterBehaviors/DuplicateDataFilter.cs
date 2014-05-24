@@ -7,7 +7,7 @@ using AASD_BuisnessLayer.BuisnessLayer_Models.Abstract;
 namespace AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.FilterBehaviors
 {
     //This is just an example. Later we can delete this filter and create new filters
-    class DuplicateDataFilter : IFilterBehavior
+    class DuplicateDataFilter 
     {
         //Delete duplicate data
         public object GetFilteredData(object data)

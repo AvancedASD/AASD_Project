@@ -7,7 +7,7 @@ using AASD_BuisnessLayer.BuisnessLayer_Models.Abstract;
 namespace AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.FilterBehaviors
 {
     //This is just an example. Later we can delete this filter and create new filters
-    class RelevanceFilter : IFilterBehavior
+    class RelevanceFilter 
     {
         //Delete not relevant data
         public Object GetFilteredData(Object data)
