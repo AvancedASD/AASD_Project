@@ -109,6 +109,12 @@
     <Folder Include="Service Gateways\" />
     <Folder Include="Service References\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataTransferObject\AASD_DataTransferObject.csproj">
+      <Project>{ef9a69ea-896b-49e7-ac15-5236324667d2}</Project>
+      <Name>AASD_DataTransferObject</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
