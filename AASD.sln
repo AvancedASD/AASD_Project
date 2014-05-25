@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AASD_BuisnessLayer", "AASD_BuisnessLayer\AASD_BuisnessLayer.csproj", "{DF680885-1702-4980-8C41-B2B637D2F621}"
+	ProjectSection(ProjectDependencies) = postProject
+		{93491D09-8779-45F4-A088-09B50FBCD001} = {93491D09-8779-45F4-A088-09B50FBCD001}
+		{C721DA3A-B57D-4163-BA92-8878BAF61E75} = {C721DA3A-B57D-4163-BA92-8878BAF61E75}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AASD_ServiceLayer", "AASD_ServiceLayer\AASD_ServiceLayer.csproj", "{7E7F0BAC-D7B9-440C-8918-A76889E3ED7B}"
 EndProject

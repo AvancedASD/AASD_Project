@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using AASD_BuisnessLayer.BuisnessLayer_Models.Abstract;
+using AASD_BuisnessLayer.BusinessGateways;
 using AASD_BuisnessLayer.Entities;
 
 namespace AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchBehaviors
@@ -12,7 +13,16 @@ namespace AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchBehaviors
     {
         public IList<Result> RetrieveResults(Query request)
         {
-            throw new NotImplementedException();
+            IList<Result> resultList = null;
+
+            if (request != null)
+            {
+                BusinessGateway businessGateway = new BusinessGateway();
+                resultList = new List<Result>();
+                resultList = businessGateway.ConsumingBingApi(request);
+            }
+
+            return resultList;
         }
     }
 }

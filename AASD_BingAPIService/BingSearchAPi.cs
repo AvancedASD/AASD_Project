@@ -1,8 +1,11 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
+using System.Globalization;
 
 // Bing Search API code sample that demonstrates the Web service operation.
+using AASD_BingAPIService.Class;
 
 namespace AASD_BingAPIService
 {
@@ -38,18 +41,8 @@ namespace AASD_BingAPIService
 
         //}
 
-        public static void MakeRequest()
+        public static IList<WebResultExt> MakeRequest(QueryExt request)
         {
-            //try
-            //{
-
-            //}
-            //catch (Exception)
-            //{
-
-            //    throw;
-            //}
-
             // This is the query expression.
 
             string query = "Microsoft Products";
@@ -72,23 +65,39 @@ namespace AASD_BingAPIService
 
             var webQuery =
 
-                bingContainer.Web(query, null, null, market, null, null, null, null);
+                bingContainer.Web(request.SearchQuery, request.Options, request.WebSearchOptions, request.Market, request.Adult, Convert.ToDouble(request.Latitude, CultureInfo.InvariantCulture), Convert.ToDouble(request.Longitude, CultureInfo.InvariantCulture), request.WebFileType);
 
             webQuery = webQuery.AddQueryOption("$top", 100);
 
             // Run the query and display the results.
 
+            IList<WebResultExt> x = new List<WebResultExt>();
             var webResults = webQuery.Execute();
 
-            foreach (var result in webResults)
+            if (webResults.Count() > 0 && webResults != null)
             {
 
-                Console.WriteLine("{0}\n\t{1}\n\n", result.Title, result.Url, result.Description);
+                foreach (var result in webResults)
+                {
+                    x.Add(
+                        new WebResultExt()
+                        {
+                            Description = result.Description,
+                            QueryId = request.QueryId,
+                            DisplayUrl = result.DisplayUrl,
+                            Title = result.Title,
+                            ResultId = result.ID,
+                            Url = result.Url
+                        }
+                        );
 
+                    Console.WriteLine("{0}\n\t{1}\n\n", result.Title, result.Url, result.Description);
+
+                }
             }
 
             Console.ReadLine();
-
+            return x;
         }
 
     }

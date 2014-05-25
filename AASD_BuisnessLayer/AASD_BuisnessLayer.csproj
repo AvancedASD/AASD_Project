@@ -55,6 +55,7 @@
     <Compile Include="BuisnessLayer_Models\Concrete\SearchBehaviors\BingSearch.cs" />
     <Compile Include="BuisnessLayer_Models\Concrete\SearchBehaviors\NeuralNetworkSearch.cs" />
     <Compile Include="BuisnessLayer_Models\Concrete\SearchEngines\SearchEngine_Standart.cs" />
+    <Compile Include="BusinessGateways\BusinessGateway.cs" />
     <Compile Include="Entities\Display.cs" />
     <Compile Include="Entities\Filter.cs" />
     <Compile Include="Entities\Result.cs" />
@@ -62,9 +63,14 @@
     <Compile Include="Enumeration\QueryResultType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AASD_BingAPIService\AASD_BingAPIService.csproj">
+      <Project>{93491d09-8779-45f4-a088-09b50fbcd001}</Project>
+      <Name>AASD_BingAPIService</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
