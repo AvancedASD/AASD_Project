@@ -51,16 +51,13 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\AASD_BuisnessLayer\AASD_BuisnessLayer.csproj">
       <Project>{df680885-1702-4980-8c41-b2b637d2f621}</Project>
       <Name>AASD_BuisnessLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\AASD_Data Access Layer\AASD_Data Access Layer.csproj">
       <Project>{c721da3a-b57d-4163-ba92-8878baf61e75}</Project>
-      <Name>AASD_Data Access Layer</Name>
+      <Name>AASD_Data Access Layer %28AASD_Data Access Layer\AASD_Data Access Layer%29</Name>
     </ProjectReference>
     <ProjectReference Include="..\AASD_ServiceLayer\AASD_ServiceLayer.csproj">
       <Project>{7e7f0bac-d7b9-440c-8918-a76889e3ed7b}</Project>
@@ -95,6 +92,9 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AASD_Data Access Layer\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
