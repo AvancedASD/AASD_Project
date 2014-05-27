@@ -76,6 +76,7 @@
     <Folder Include="Implementation\" />
     <Folder Include="MessageContracts\" />
     <Folder Include="ServiceContracts\" />
+    <Folder Include="Translators\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Schema\DataContract.xsd">
