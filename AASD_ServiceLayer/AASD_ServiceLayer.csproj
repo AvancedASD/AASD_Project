@@ -78,9 +78,9 @@
     <Folder Include="ServiceContracts\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Schema\DataContract.xsd">
+    <EmbeddedResource Include="Schema\DataContract.xsd">
       <SubType>Designer</SubType>
-    </None>
+    </EmbeddedResource>
     <None Include="Schema\MessageContract.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -93,6 +93,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AASD_BuisnessLayer\AASD_BuisnessLayer.csproj">
+      <Project>{df680885-1702-4980-8c41-b2b637d2f621}</Project>
+      <Name>AASD_BuisnessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
