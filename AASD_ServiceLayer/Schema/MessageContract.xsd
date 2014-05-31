@@ -1,10 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema id="MessageContract"
-    targetNamespace="AASD_MessageContract"
+    targetNamespace="AASD_Contracts/Message"
     elementFormDefault="qualified"
-    xmlns="AASD_MessageContract"
-    xmlns:mstns="AASD_MessageContract"
+    xmlns="AASD_Contracts/Message"
+    xmlns:mstns="AASD_Contracts/Message"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:data="AASD_Contracts/Data"
 >
-    
+  <xs:import namespace="AASD_Contracts/Data" schemaLocation="DataContract.xsd"></xs:import>
+  
+  <xs:element name="RetrieveSearchRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Request" type="data:QueryContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Response" type="data:ResultContract" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
