@@ -8,7 +8,7 @@
            xmlns:data="AASD_Contracts/Data"
 >
   <xs:import namespace="AASD_Contracts/Data" schemaLocation="DataContract.xsd"></xs:import>
-  
+
   <xs:element name="RetrieveSearchRequest">
     <xs:complexType>
       <xs:sequence>

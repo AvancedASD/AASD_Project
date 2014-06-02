@@ -1,4 +1,4 @@
-namespace AASD_ServiceLayer
+namespace AASD_ServiceLayer.DataContract
 {
     
     

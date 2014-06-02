@@ -29,7 +29,7 @@
   </xs:complexType>
   <xs:complexType name ="ResultSetContract">
     <xs:sequence>
-      <xs:element name="Results" type="tns:ResultContract"  maxOccurs="unbounded"></xs:element>
+      <xs:element name="Results" type="tns:QueryContract"  maxOccurs="unbounded"></xs:element>
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

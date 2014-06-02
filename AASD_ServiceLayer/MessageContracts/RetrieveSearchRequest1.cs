@@ -1,4 +1,7 @@
-namespace AASD_ServiceLayer
+using AASD_ServiceLayer.DataContract;
+using AASD_ServiceLayer.MessageContract;
+
+namespace AASD_ServiceLayer.MessageContract
 {
     
     
