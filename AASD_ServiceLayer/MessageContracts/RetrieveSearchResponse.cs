@@ -1,4 +1,7 @@
-namespace AASD_ServiceLayer
+using AASD_ServiceLayer.DataContract;
+using AASD_ServiceLayer.MessageContract;
+
+namespace AASD_ServiceLayer.MessageContract
 {
     
     
@@ -9,17 +12,17 @@ namespace AASD_ServiceLayer
     public partial class RetrieveSearchResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="RetrieveSearchResponse1", Namespace="AASD_Contracts/Message", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listResultContract", Namespace="AASD_Contracts/Message", Order=0)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Response", IsNullable=false)]
-        public System.Collections.Generic.List<ResultContract> RetrieveSearchResponse1;
+        public System.Collections.Generic.List<ResultContract> listResultContract;
         
         public RetrieveSearchResponse()
         {
         }
         
-        public RetrieveSearchResponse(System.Collections.Generic.List<ResultContract> RetrieveSearchResponse1)
+        public RetrieveSearchResponse(System.Collections.Generic.List<ResultContract> listResultContract)
         {
-            this.RetrieveSearchResponse1 = RetrieveSearchResponse1;
+            this.listResultContract = listResultContract;
         }
     }
 }

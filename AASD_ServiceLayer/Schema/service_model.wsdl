@@ -10,10 +10,10 @@
     </xsd:schema>
   </types>
   <message name="RetrieveSearchRequest">
-    <part name="messagePart"  element="msg:RetrieveSearchRequest"></part>
+    <part name="request"  element="msg:RetrieveSearchRequest"></part>
   </message>
   <message name="RetrieveSearchResponse">
-    <part name="messagePart" element="msg:RetrieveSearchResponse"></part>
+    <part name="result" element="msg:RetrieveSearchResponse"></part>
   </message>
   <portType name="AASDServiceInterface">
     <operation name="RetrieveSearch">
@@ -24,8 +24,7 @@
   <binding name="AASDService" type="tns:AASDServiceInterface">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
     <operation name="RetrieveSearch">
-      <soap:operation soapAction=
-       "AASD_Contracts/WebService:RetrieveSearch" style="document" />
+      <soap:operation soapAction="AASD_Contracts/WebService:RetrieveSearch" style="document" />
       <input>
         <soap:body use="literal" />
       </input>

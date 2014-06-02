@@ -62,7 +62,9 @@
   <ItemGroup>
     <Content Include="AASDService.svc" />
     <Content Include="Service1.svc" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContracts\QueryContract.cs" />
@@ -86,15 +88,15 @@
     <EmbeddedResource Include="Schema\DataContract.xsd">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Schema\MessageContract.xsd">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <Content Include="Schema\service_model.wsdl">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="output.config">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Schema\MessageContract.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -119,11 +121,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:10009/</IISUrl>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>3886</DevelopmentServerPort>
+          <DevelopmentServerVPath>/HostDevServer</DevelopmentServerVPath>
+          <IISUrl>http://localhost:10009/AASDService/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
