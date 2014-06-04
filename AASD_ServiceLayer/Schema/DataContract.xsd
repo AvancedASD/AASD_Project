@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataContract"
+    targetNamespace="AASD_Contracts/Data"
+    elementFormDefault="qualified"
+    xmlns="AASD_Contracts/Data"
+    xmlns:mstns="AASD_Contracts/Data"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="AASD_Contracts/Data"
+           >
+  <xs:complexType name="QueryContract">
+    <xs:sequence>
+      <xs:element name="Query" type="xs:string" nillable="false"></xs:element>
+      <xs:element name="Options" type="xs:string" nillable="true"></xs:element>
+      <xs:element name="WebSearchOptions" type="xs:string" nillable="true"></xs:element>
+      <xs:element name="Market" type="xs:string" nillable="true"></xs:element>
+      <xs:element name="Adult" type="xs:string" nillable="true"></xs:element>
+      <xs:element name="Latitude" type="xs:string" nillable="true"></xs:element>
+      <xs:element name="Longitude" type="xs:string" nillable="true"></xs:element>
+      <xs:element name="WebFileType" type="xs:string" nillable="true"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResultContract">
+    <xs:sequence>
+      <xs:element name="Title" type="xs:string" nillable="false"></xs:element>
+      <xs:element name="Description" type="xs:string" nillable="true"></xs:element>
+      <xs:element name="DisplayUrl" type="xs:string" nillable="true"></xs:element>
+      <xs:element name="Url" type="xs:string" nillable="true"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name ="ResultSetContract">
+    <xs:sequence>
+      <xs:element name="Results" type="tns:QueryContract"  maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

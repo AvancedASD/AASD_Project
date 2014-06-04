@@ -1,0 +1,36 @@
+﻿<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:tns="AASD_Contracts/WebService"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:msg="AASD_Contracts/Message"
+             targetNamespace="AASD_Contracts/WebService"
+  name="AASDService" xmlns="http://schemas.xmlsoap.org/wsdl/" >
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="AASD_Contracts/Message" schemaLocation="MessageContract.xsd"  />
+    </xsd:schema>
+  </types>
+  <message name="RetrieveSearchRequest">
+    <part name="request"  element="msg:RetrieveSearchRequest"></part>
+  </message>
+  <message name="RetrieveSearchResponse">
+    <part name="result" element="msg:RetrieveSearchResponse"></part>
+  </message>
+  <portType name="AASDServiceInterface">
+    <operation name="RetrieveSearch">
+      <input message="tns:RetrieveSearchRequest" />
+      <output message="tns:RetrieveSearchResponse" />
+    </operation>
+  </portType>
+  <binding name="AASDService" type="tns:AASDServiceInterface">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="RetrieveSearch">
+      <soap:operation soapAction="AASD_Contracts/WebService:RetrieveSearch" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+</definitions>

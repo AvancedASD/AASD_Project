@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="AASD_Contracts/WebService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="AASD_Contracts/WebService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="AASD_Contracts/WebService/Imports">
+      <xsd:import schemaLocation="http://localhost:3886/HostDevServer/AASDService.svc?xsd=xsd0" namespace="AASD_Contracts/Message" />
+      <xsd:import schemaLocation="http://localhost:3886/HostDevServer/AASDService.svc?xsd=xsd1" namespace="AASD_Contracts/Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="RetrieveSearchRequest1">
+    <wsdl:part xmlns:q1="AASD_Contracts/Message" name="RetrieveSearchRequest" element="q1:RetrieveSearchRequest" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveSearchResponse">
+    <wsdl:part xmlns:q2="AASD_Contracts/Message" name="listResultContract" element="q2:listResultContract" />
+  </wsdl:message>
+  <wsdl:portType name="IAASDService">
+    <wsdl:operation name="RetrieveSearch">
+      <wsdl:input wsaw:Action="AASD_Contracts/WebService/IAASDService/RetrieveSearch" name="RetrieveSearchRequest1" message="tns:RetrieveSearchRequest1" />
+      <wsdl:output wsaw:Action="AASD_Contracts/WebService/IAASDService/RetrieveSearchResponse" name="RetrieveSearchResponse" message="tns:RetrieveSearchResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

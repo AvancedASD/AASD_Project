@@ -1,0 +1,1 @@
+<%@ ServiceHost Service="AASD_ServiceLayer.AASDService" %>
