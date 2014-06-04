@@ -24,6 +24,7 @@ namespace Test
                 RetrieveSearchRequest retrieveSearchRequest = new RetrieveSearchRequest();
                 retrieveSearchRequest.Request = new QueryContract() { Query = "asas" };
                 ResultContract[] lstResultContracts = client.RetrieveSearch(retrieveSearchRequest);
+                
                 Console.WriteLine(lstResultContracts[0].Title);
             }
         }

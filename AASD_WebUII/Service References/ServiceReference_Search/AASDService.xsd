@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="AASD_Contracts/Data" elementFormDefault="qualified" targetNamespace="AASD_Contracts/Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="QueryContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Query" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Options" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="WebSearchOptions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Market" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Adult" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Latitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Longitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="WebFileType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResultContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Title" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DisplayUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
