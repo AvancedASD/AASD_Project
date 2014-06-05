@@ -9,20 +9,33 @@ using AASD_BuisnessLayer.Entities;
 namespace AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchBehaviors
 {
     // FOr the time being any one of the search class is enough, we will deal with all the search related business functionality here. - Santosh
-    class BingSearch : ISearchBehaviour
+    public class BingSearch : ISearchBehaviour
     {
         public IList<Result> RetrieveResults(Query request)
         {
             IList<Result> resultList = null;
-
-            if (request != null)
+            try
             {
-                BusinessGateway businessGateway = new BusinessGateway();
-                resultList = new List<Result>();
-                resultList = businessGateway.ConsumingBingApi(request);
+                if (request != null)
+                {
+                    BusinessGateway businessGateway = new BusinessGateway();
+                    resultList = new List<Result>();
+                    resultList = businessGateway.ConsumingBingApi(request);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                
             }
 
+
             return resultList;
+
         }
     }
 }

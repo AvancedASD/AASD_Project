@@ -22,7 +22,7 @@ namespace Test
             using (AASDServiceClient client = new AASDServiceClient())
             {
                 RetrieveSearchRequest retrieveSearchRequest = new RetrieveSearchRequest();
-                retrieveSearchRequest.Request = new QueryContract() { Query = "asas" };
+                retrieveSearchRequest.Request = new QueryContract() { Query = "asas", Market = "en-us"};
                 ResultContract[] lstResultContracts = client.RetrieveSearch(retrieveSearchRequest);
                 
                 Console.WriteLine(lstResultContracts[0].Title);

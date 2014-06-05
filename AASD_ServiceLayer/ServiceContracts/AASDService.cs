@@ -1,7 +1,12 @@
+using System;
 using System.Collections.Generic;
 using System.Web.UI.MobileControls;
+using AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchBehaviors;
+using AASD_BuisnessLayer.Entities;
 using AASD_ServiceLayer.DataContract;
 using AASD_ServiceLayer.MessageContract;
+using AASD_ServiceLayer.Translators;
+using AASD_BuisnessLayer;
 
 namespace AASD_ServiceLayer
 {
@@ -14,18 +19,31 @@ namespace AASD_ServiceLayer
         public virtual RetrieveSearchResponse RetrieveSearch(RetrieveSearchRequest1 request)
         {
             RetrieveSearchResponse retrieveSearchResponse = null;
-            List<ResultContract> lstResult = new List<ResultContract>();
-            ResultContract rstContract = new ResultContract()
-            {
-                Description = "asasa asasa",
-                DisplayUrl = "https://github.com/AvancedASD/AASD_Project/tree/develop/AASD_ServiceLayer/Schema",
-                Title = "test",
-                Url = "https://github.com/AvancedASD/AASD_Project/tree/develop/AASD_ServiceLayer/Schema"
-            };
-            lstResult.Add(rstContract);
+            List<ResultContract> lstResult = null;
 
-            retrieveSearchResponse = new RetrieveSearchResponse();
-            retrieveSearchResponse.listResultContract = lstResult;
+            try
+            {
+                if (request.RetrieveSearchRequest != null)
+                {
+
+                    BingSearch bingSearch = new BingSearch();
+                    IList<Result> resultListEntity =
+                        bingSearch.RetrieveResults(Translators.Translator.ConvertQueryContractTOEntity(request));
+                    lstResult = Translator.ConvertResultEntityToContract(resultListEntity);
+
+                    retrieveSearchResponse = new RetrieveSearchResponse();
+                    retrieveSearchResponse.listResultContract = lstResult;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+            }
+            
             return retrieveSearchResponse;
         }
     }

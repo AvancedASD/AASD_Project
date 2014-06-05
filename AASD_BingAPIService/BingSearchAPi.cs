@@ -74,10 +74,9 @@ namespace AASD_BingAPIService
             IList<WebResultExt> x = new List<WebResultExt>();
             var webResults = webQuery.Execute();
 
-            if (webResults.Count() > 0 && webResults != null)
+            if (webResults != null)
             {
-
-                foreach (var result in webResults)
+                webResults.ToList<WebResult>().ForEach(result =>
                 {
                     x.Add(
                         new WebResultExt()
@@ -88,12 +87,8 @@ namespace AASD_BingAPIService
                             Title = result.Title,
                             ResultId = result.ID,
                             Url = result.Url
-                        }
-                        );
-
-                    Console.WriteLine("{0}\n\t{1}\n\n", result.Title, result.Url, result.Description);
-
-                }
+                        });
+                });
             }
 
             Console.ReadLine();
