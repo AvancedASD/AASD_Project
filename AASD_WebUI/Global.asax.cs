@@ -27,8 +27,8 @@ namespace AASD_WebUI
 
             routes.MapRoute(
                 "Default", // Route name
-                "{controller}/{action}", // URL with parameters
-                new { controller = "Home", action = "Search"} // Parameter defaults
+                "{controller}/{action}/{obj}", // URL with parameters
+                new { controller = "Home", action = "Search", obj=""} // Parameter defaults
             );
 
            
