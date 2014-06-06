@@ -6,7 +6,7 @@
 
 <form action="Search" method="post">
     <input id="request" name="request" type="text" value="" />
-     <p><input id="Submit_request" type="submit" value="Search" /></p>
+     <p><input id="Submit_request" formaction="@(Url.Action("Search", "Home"))" type="submit" value="Search" /></p>
  </form>
 
 
