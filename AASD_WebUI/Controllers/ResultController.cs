@@ -12,17 +12,18 @@ namespace AASD_WebUI.Controllers
     {
         //
         // GET: /Result/
-
-        public ActionResult List(string request)
+         public ActionResult List(string query = "")
         {
+            string filteredQuery = query;
+            
             ResultListViewModel resultsListViewModel = new ResultListViewModel();
-            resultsListViewModel.currentRequest = request;
+            resultsListViewModel.currentQuery = filteredQuery;
 
 
            using (AASDServiceClient client = new AASDServiceClient())
             {
                 RetrieveSearchRequest retrieveSearchRequest = new RetrieveSearchRequest();
-                retrieveSearchRequest.Request = new QueryContract() { Query = resultsListViewModel.currentRequest };
+                retrieveSearchRequest.Request = new QueryContract() { Query = resultsListViewModel.currentQuery };
                 resultsListViewModel.results = client.RetrieveSearch(retrieveSearchRequest);
 
                 //Console.WriteLine(lstResultContracts[0].Title);

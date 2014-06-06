@@ -1,0 +1,28 @@
+﻿@model AASD_WebUI.Models.ResultListViewModel
+           
+@{if(Model.results!=null)
+  {
+      <h2>Search results for request: @Model.currentQuery</h2>
+      <h2>Number of results: @Model.results.Count()</h2>
+        
+        ViewBag.Title = "List of search results";
+        
+        foreach (var result in Model.results)
+        {
+            <div class="result row">
+           <h2> @result.Title </h2>
+           <h3> @result.Description </h3>
+           <h4> @result.Url </h4>
+           <h4> @result.DisplayUrl </h4>
+            </div>
+        }
+  }
+  else
+  {
+      <h2> Search service is temporary unavailable </h2>
+  }
+}
+
+
+
+

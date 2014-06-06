@@ -21,12 +21,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Helpers", "Data Helper
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service Agents", "Service Agents", "{685B5291-8D69-467C-B437-4B264715E12F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AASD_WebUI", "AASD_WebUII\AASD_WebUI.csproj", "{C5C71D42-EFFE-4958-A18E-4FA3064B78C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AASD_WebUI", "AASD_WebUI\AASD_WebUI.csproj", "{C5C71D42-EFFE-4958-A18E-4FA3064B78C1}"
 	ProjectSection(ProjectDependencies) = postProject
 		{7E7F0BAC-D7B9-440C-8918-A76889E3ED7B} = {7E7F0BAC-D7B9-440C-8918-A76889E3ED7B}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{2F37D71D-BBF0-4E1A-93D1-633AB012FEC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AASD_WebUI.Tests", "AASD_WebUI.Tests\AASD_WebUI.Tests.csproj", "{746C8395-B888-4BF9-8A61-1406957EC059}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,10 @@ Global
 		{2F37D71D-BBF0-4E1A-93D1-633AB012FEC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F37D71D-BBF0-4E1A-93D1-633AB012FEC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F37D71D-BBF0-4E1A-93D1-633AB012FEC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{746C8395-B888-4BF9-8A61-1406957EC059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{746C8395-B888-4BF9-8A61-1406957EC059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{746C8395-B888-4BF9-8A61-1406957EC059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{746C8395-B888-4BF9-8A61-1406957EC059}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

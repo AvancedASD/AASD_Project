@@ -23,18 +23,17 @@ namespace AASD_WebUI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                null, 
-                "{request}",
-                new { controller = "Result", action = "List" } 
-            );
+            /*routes.MapRoute(
+                null,
+                "q={request}",
+                new { controller = "Result", action = "List", request = UrlParameter.Optional }
+            );*/
 
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}", // URL with parameters
                 new { controller = "Home", action = "Search"} // Parameter defaults
-            );
-
+            );   
         }
 
         protected void Application_Start()

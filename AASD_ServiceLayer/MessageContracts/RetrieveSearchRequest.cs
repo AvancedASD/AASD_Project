@@ -1,6 +1,8 @@
 using AASD_ServiceLayer.DataContract;
 
 
+
+
 namespace AASD_ServiceLayer.MessageContract
 {
     
