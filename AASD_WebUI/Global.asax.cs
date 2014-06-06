@@ -23,10 +23,7 @@ namespace AASD_WebUI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-          routes.MapRoute(
-             null,
-             "q={request}",
-             new { controller = "Result", action = "List", request = UrlParameter.Optional });
+         
 
             routes.MapRoute(
                 "Default", // Route name
