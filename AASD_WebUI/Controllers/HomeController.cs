@@ -15,7 +15,7 @@ namespace AASD_WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Search(string request)
+        public ActionResult Search(string request = "")
         {
             //if (!string.IsNullOrEmpty(request) && request.Length < 50)
             //{
