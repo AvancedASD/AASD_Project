@@ -38,7 +38,19 @@ namespace AASD_BuisnessLayer.BusinessGateways
 
                 if (xExt.Count > 0 && xExt != null)
                 {
-                    //Translate back
+                    resultEntity = new List<Result>();
+                    xExt.ToList<WebResultExt>().ForEach(x =>
+                    {
+                        resultEntity.Add(new Result()
+                        {
+                            Description = x.Description,
+                            DisplayUrl = x.DisplayUrl,
+                            QueryId = x.QueryId,
+                            ResultId = x.ResultId,
+                            Title = x.Title,
+                            Url = x.Url,
+                        });
+                    });
                 }
 
             }

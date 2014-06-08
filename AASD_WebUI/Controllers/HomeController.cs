@@ -4,11 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 //using AASD_WebUI.Models;
+using System.Web.Routing;
 
 namespace AASD_WebUI.Controllers
 {
     public class HomeController : Controller
-    {      
+    {
         public ViewResult Search()
         {
             return View();
@@ -22,7 +23,8 @@ namespace AASD_WebUI.Controllers
             //    return "Incorrect request";
             //}
             //return request;
-           return Redirect(Url.Action("List","Result", request));
+
+            return Redirect(Url.Action("List", "Result", new { query = !string.IsNullOrEmpty(request) ? request : string.Empty }));
         }
 
     }
