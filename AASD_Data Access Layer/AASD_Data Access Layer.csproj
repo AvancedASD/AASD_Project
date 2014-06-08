@@ -94,6 +94,13 @@
       <DependentUpon>AASD_DBEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="access.cs" />
+    <Compile Include="DataProvider\DALDeleteData.cs" />
+    <Compile Include="DataProvider\DALSaveData.cs" />
+    <Compile Include="DataProvider\DALShowData.cs" />
+    <Compile Include="DataProvider\IDALSaveData.cs" />
+    <Compile Include="DataProvider\IDALShowData.cs" />
+    <Compile Include="DataProvider\IDataProvider.cs" />
+    <Compile Include="DataProvider\IDALDeleteData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">

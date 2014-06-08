@@ -10,7 +10,7 @@ namespace AASD_Data_Access_Layer
     {
         static void Main(string[] args)
         {
-            using (AASD_DBEntities aasd_DBEntities = new AASD_DBEntities() )
+            /*using (AASD_DBEntities aasd_DBEntities = new AASD_DBEntities() )
             {
                 var l = from e in aasd_DBEntities.AASD_DB_Query
                         select e;
@@ -20,7 +20,9 @@ namespace AASD_Data_Access_Layer
                 }
                 Console.ReadLine();
             }
-
+            */
+            DataProvider.IDALShowData obj =  (new DataProvider.DALShowData());
+            obj.selectQueryData();
             
             
 
