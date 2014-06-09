@@ -69,7 +69,19 @@ namespace AASD_Data_Access_Layer.DataProvider
                 var query = (from q in resultObject.AASD_DB_Result
                              where q.Query_Id == id
                              select q).First();
-                return (AASD_DB_Result)query;
+
+                //Assigning query object values to Result Object 
+                AASD_DB_Result returnObject = new AASD_DB_Result();
+                returnObject.Query_Id = query.Query_Id;
+                returnObject.Result_Id = query.Result_Id;
+                returnObject.Title = query.Title;
+                returnObject.Display_Url = query.Display_Url;
+                returnObject.Result_Url = query.Result_Url;
+                returnObject.Description = query.Description;
+                returnObject.Creation_TimeStamp = query.Creation_TimeStamp;
+                
+
+                return returnObject;
             }
             catch(Exception e)
             {
