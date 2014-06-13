@@ -94,6 +94,11 @@
       <DependentUpon>AASD_DBEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="access.cs" />
+    <Compile Include="DataProvider\ResultData.cs" />
+    <Compile Include="DataProvider\QueryData.cs" />
+    <Compile Include="DataProvider\IResultData.cs" />
+    <Compile Include="DataProvider\IDataProvider.cs" />
+    <Compile Include="DataProvider\IQueryData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
