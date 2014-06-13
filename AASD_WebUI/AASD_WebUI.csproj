@@ -226,10 +226,10 @@
     <None Include="Service References\ServiceReference_Search\AASDService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\SearchResult\List.cshtml" />
     <Content Include="Views\Nav\Menu.cshtml" />
     <Content Include="Views\SearchResult\ServiceUnavailableError.cshtml" />
     <Content Include="Views\SearchResult\EmptyQueryError.cshtml" />
+    <Content Include="Views\SearchResult\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
