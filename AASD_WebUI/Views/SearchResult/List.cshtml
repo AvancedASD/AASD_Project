@@ -4,23 +4,29 @@
 }
 
 <div class="Result_info">
-    <h2>Search results for request: @Model.currentQuery.stringQuery</h2>
+    <h2>Search results for a request: @Model.currentQuery.stringQuery</h2>
 </div>
 
-<ul class="Result_table">
-    @foreach (var result in Model.results)
-    {            
-        <li>
-            <h2>@result.Title </h2>
-            <h3>@result.Description </h3>
-            <h4>@result.Url </h4>
-            <h4>@result.DisplayUrl </h4>
-        </li>           
-    }
-</ul>
+<div class="Result_table">
+    <ul>
+        @foreach (var result in Model.results)
+        {            
+            <li>
+                <h2>@result.Title </h2>
+                <h3>@result.Description </h3>
+                <a href="@result.Url" >More</a>
+                <h4>@result.DisplayUrl </h4>
+            </li>           
+        }
+    </ul>
+</div>
 
 <div class="pager">
-     @Html.PageLinks(Model.pagingInfo, x => Url.Action("List","SearchResult", new {  query = Model.currentQuery.stringQuery,
-        context = Model.currentQuery.context, page = x }))      
- </div>
+    @Html.PageLinks(Model.pagingInfo, x => Url.Action("List", "SearchResult", new
+{
+    query = Model.currentQuery.stringQuery,
+    context = Model.currentQuery.context,
+    page = x
+}))
+</div>
 

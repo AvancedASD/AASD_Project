@@ -36,26 +36,45 @@ DIV.pager {
             color: White;
         }
 
-DIV.item {
+/*Results*/
+DIV.Result_table {
     border-top: 1px dotted gray;
     padding-top: .7em;
     margin-bottom: .7em;
 }
 
-    DIV.item:first-child {
+    DIV.Result_table ul {
+        list-style-type: square;
         border-top: none;
         padding-top: 0;
     }
 
-    DIV.item H3 {
-        font-size: 1.3em;
-        margin: 0 0 .25em 0;
-    }
+        DIV.Result_table ul li {
+            background-color:azure;
+            background-repeat: no-repeat;
+            background-position: 0px 5px;
+            padding-left: 14px;
+        }
 
-    DIV.item H4 {
-        font-size: 1.1em;
-        margin: .4em 0 0 0;
-    }
+
+        DIV.Result_table ul H2 {
+            font-size: 1.3em;
+            margin: 0 0 .25em 0;
+            padding-top: 0;
+        }
+
+        DIV.Result_table ul H3 {
+            font-size: 1.0em;
+            margin: 0 0 .25em 0;
+            padding-top: 0;
+        }
+
+        DIV.Result_table ul H3 {
+            font-size: 1.0em;
+            margin: 0 0 .25em 0;
+            padding-top: 0;
+        }
+
 
 /* Styles for basic forms
 -----------------------------------------------------------*/
