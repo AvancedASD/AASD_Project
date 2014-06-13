@@ -12,10 +12,9 @@
         @foreach (var result in Model.results)
         {            
             <li>
-                <h2>@result.Title </h2>
+                <h2> <a href="@result.Url" >@result.Title</a>  </h2>
                 <h3>@result.Description </h3>
-                <a href="@result.Url" >More</a>
-                <h4>@result.DisplayUrl </h4>
+                           
             </li>           
         }
     </ul>
