@@ -10,6 +10,6 @@ namespace AASD_WebUI.Models
     {
         public IEnumerable<ResultContract> results { get; set; }
         public PagingInfo pagingInfo { get; set; }
-        public string currentQuery { get; set; }
+        public QueryViewModel currentQuery { get; set; }
     }
 }

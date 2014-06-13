@@ -23,16 +23,39 @@ namespace AASD_WebUI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-         
+            routes.MapRoute(null, "", // Only matches the empty URL (i.e. /)
+             new
+             {
+                 controller = "Search",
+                 action = "Index",                
+             }
+             );
+
+           // routes.MapRoute(
+           //   "Quick_Search", // Route name
+           //   "search/q-{query}.c-{context}", // URL with parameters
+           //    new { controller = "SearchResult", 
+           //        action = "List",
+           //        query = UrlParameter.Optional, 
+           //        context = UrlParameter.Optional }         
+           //);
 
             routes.MapRoute(
-                "Default", // Route name
-                "{controller}/{action}/{obj}", // URL with parameters
-                new { controller = "Home", action = "Search", obj=""} // Parameter defaults
-            );
+              "Quick_Search", // Route name
+              "search/page{page}", // URL with parameters
+               new
+               {
+                   controller = "SearchResult",
+                   action = "List",
+                   page = 1
+               },
+               new { page = @"\d+" }
+           );
 
-           
-         
+            routes.MapRoute(
+                null,
+                "{controller}/{action}"
+            );
         }
 
         protected void Application_Start()

@@ -1,0 +1,21 @@
+﻿@model AASD_WebUI.Models.QueryViewModel
+
+@{
+    ViewBag.Title = "AASD search";
+    Layout = null;
+}
+
+@using (Html.BeginForm())
+{
+    <h4>Enter search query: </h4> @Html.EditorFor(m => m.stringQuery);
+    <h4>Enter search context: </h4> @Html.EditorFor(m => m.context);  
+    <input type="submit" value="Search" />
+}
+
+@*<form action="Search" method="post">
+    <input id="request" name="request" type="text" value="sa" />
+     <p><input id="Submit_request" formaction="@(Url.Action("Search", "Response"))" type="submit" value="Search" /></p>
+ </form>*@
+
+
+

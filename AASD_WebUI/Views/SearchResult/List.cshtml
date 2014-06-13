@@ -1,0 +1,22 @@
+﻿@model AASD_WebUI.Models.ResultListViewModel
+@ViewBag.Title = "List of search results";
+
+<div class="Result_info">
+    <h2>Search results for request: @Model.currentQuery.stringQuery</h2>
+</div>
+
+
+
+<ul class="Result_table">
+    @foreach (var result in Model.results)
+    {            
+        <li>
+            <h2>@result.Title </h2>
+            <h3>@result.Description </h3>
+            <h4>@result.Url </h4>
+            <h4>@result.DisplayUrl </h4>
+        </li>           
+    }
+</ul>
+
+
