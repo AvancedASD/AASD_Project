@@ -33,6 +33,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AASD_WebUI.Tests", "AASD_WebUI.Tests\AASD_WebUI.Tests.csproj", "{746C8395-B888-4BF9-8A61-1406957EC059}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AASD_WebUI.WebAndLoadTests", "AASD_WebUI.WebAndLoadTests\AASD_WebUI.WebAndLoadTests.csproj", "{525DEA11-68DD-40F2-AFC9-2C0D754FE6D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C81B83C3-1EA5-45B0-8AE2-93996CA689F8}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +78,10 @@ Global
 		{746C8395-B888-4BF9-8A61-1406957EC059}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{746C8395-B888-4BF9-8A61-1406957EC059}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{746C8395-B888-4BF9-8A61-1406957EC059}.Release|Any CPU.Build.0 = Release|Any CPU
+		{525DEA11-68DD-40F2-AFC9-2C0D754FE6D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{525DEA11-68DD-40F2-AFC9-2C0D754FE6D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{525DEA11-68DD-40F2-AFC9-2C0D754FE6D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{525DEA11-68DD-40F2-AFC9-2C0D754FE6D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

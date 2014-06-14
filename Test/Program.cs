@@ -17,8 +17,7 @@ namespace Test
         /// </summary>
         [STAThread]
         static void Main()
-        {
-            
+        {            
             using (AASDServiceClient client = new AASDServiceClient())
             {
                 RetrieveSearchRequest retrieveSearchRequest = new RetrieveSearchRequest();

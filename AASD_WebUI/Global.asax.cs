@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using AASD_WebUI.Infastructure;
 
 namespace AASD_WebUI
 {
@@ -67,6 +68,8 @@ namespace AASD_WebUI
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
         }
     }
 }

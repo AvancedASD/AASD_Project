@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net40\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -110,6 +113,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HTML_Helpers\PagingHelpers.cs" />
+    <Compile Include="Infastructure\NinjectControllerFactory.cs" />
     <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Models\QueryViewModel.cs" />
     <Compile Include="Models\ResultListViewModel.cs" />
@@ -265,7 +269,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>26939</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:19137/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
