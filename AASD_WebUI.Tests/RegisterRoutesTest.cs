@@ -96,8 +96,11 @@ namespace AASD_WebUI.Tests
             // check that the values are being obtained from the segments
             // TestRouteMatch("~/One/Two", "One", "Two");
 
-            TestRouteMatch("~/Response/Search", "Response", "Search");
-            TestRouteMatch("~/Response/Search/test", "Response", "Search", new { request = "test" });
+            TestRouteFail("~/Nav/Menu");
+            TestRouteFail("~/SearchResult/List");  
+            TestRouteFail("~/Random/Random");
+
+            TestRouteMatch("~/", "Search", "Index");
           //  TestRouteMatch("~/Search/q=test", "Home", "Search", new { request = "test" });
           //  TestRouteFail("~/Result/List/test");
             // ensure that too many or too few segments fails to match

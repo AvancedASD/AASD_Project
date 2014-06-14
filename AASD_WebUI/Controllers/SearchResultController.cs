@@ -10,26 +10,23 @@ namespace AASD_WebUI.Controllers
 {
     public class ResultRepository
     {
-        private static string currentQuery = null;
-        private static ResultContract[] results = null;
-
         //[TestMethod]
         public IEnumerable<ResultContract> GetFakeResults(string query)
         {
-            if (currentQuery != query) //then getresults from service
+
+            ResultContract[] results = new ResultContract[100];
+             for (int i = 0; i < 100; i++)
+             {
+                 results[i] = new ResultContract() { Description = query, DisplayUrl = "xxx.com"+i.ToString(), Title = query, Url = "www.xxx.com" };
+             }
+            /*ResultContract[] results;
+            using (AASDServiceClient client = new AASDServiceClient())
             {
-               /* results = new ResultContract[100];
-                for (int i = 0; i < 100; i++)
-                {
-                    results[i] = new ResultContract() { Description = query, DisplayUrl = "xxx.com"+i.ToString(), Title = query, Url = "www.xxx.com" };
-                }*/
-                using (AASDServiceClient client = new AASDServiceClient())
-                {
-                   RetrieveSearchRequest retrieveSearchRequest = new RetrieveSearchRequest();
-                   retrieveSearchRequest.Request = new QueryContract() { Query = query };
-                   results = client.RetrieveSearch(retrieveSearchRequest);                    
-                }
-            }
+                RetrieveSearchRequest retrieveSearchRequest = new RetrieveSearchRequest();
+                retrieveSearchRequest.Request = new QueryContract() { Query = query };
+                results = client.RetrieveSearch(retrieveSearchRequest);
+            }*/
+
             return results;
         }
 
@@ -47,8 +44,8 @@ namespace AASD_WebUI.Controllers
             resultRepository = new ResultRepository();
         }
 
-
-        public ActionResult List(string query = "", string context = "", int page = 1)
+        //[OutputCache(Duration = 30)]
+        public ActionResult List(string query = "test", string context = "", int page = 1)
         {
             //Test
             if (query == null)
@@ -58,8 +55,6 @@ namespace AASD_WebUI.Controllers
             {
                 return View("EmptyQueryError");
             }
-
-        
 
             ResultListViewModel resultsListViewModel = new ResultListViewModel();
             resultsListViewModel.currentQuery = new QueryViewModel() { stringQuery = query, context = context };
@@ -72,13 +67,14 @@ namespace AASD_WebUI.Controllers
                 currentPage = page,
                 itemsPerPage = pageSize,
                 totalItems = resultRepository.
-                   GetFakeResults(resultsListViewModel.currentQuery.stringQuery).Count()
+                GetFakeResults(resultsListViewModel.currentQuery.stringQuery).Count()
             };
 
             if (resultsListViewModel.results == null)
             {
                 return View("ServiceUnavailableError");
             }
+           // resultsListViewModel.currentQuery.stringQuery += DateTime.Now.ToString();
             return View(resultsListViewModel);
         }
     }
