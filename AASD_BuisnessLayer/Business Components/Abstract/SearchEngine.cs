@@ -20,9 +20,9 @@ namespace AASD_BuisnessLayer.BuisnessLayer_Models.Abstract
             _search = search;
         }
 
-        public Object FilterData(IList<Result> data)
+        public Object FilterData(IList<Result> data, IList<String> context)
         {
-            Object filteredData = _filter.GetFilteredData(data);
+            Object filteredData = _filter.GetFilteredData(data, context);
             return filteredData;
         }
 
