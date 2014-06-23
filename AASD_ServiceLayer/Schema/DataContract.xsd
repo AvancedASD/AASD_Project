@@ -10,6 +10,7 @@
   <xs:complexType name="QueryContract">
     <xs:sequence>
       <xs:element name="Query" type="xs:string" nillable="false"></xs:element>
+      <xs:element name="Context" type="xs:string" nillable="true"></xs:element>
       <xs:element name="Options" type="xs:string" nillable="true"></xs:element>
       <xs:element name="WebSearchOptions" type="xs:string" nillable="true"></xs:element>
       <xs:element name="Market" type="xs:string" nillable="true"></xs:element>

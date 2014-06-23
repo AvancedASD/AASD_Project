@@ -22,7 +22,7 @@ namespace AASD_WebUI.Controllers
             using (AASDServiceClient client = new AASDServiceClient())
             {
                 RetrieveSearchRequest retrieveSearchRequest = new RetrieveSearchRequest();
-                retrieveSearchRequest.Request = new QueryContract() { Query = query };
+                retrieveSearchRequest.Request = new QueryContract() { Query = query, Context = string.Empty };
                 results = client.RetrieveSearch(retrieveSearchRequest);
             }
             return results;
@@ -35,7 +35,7 @@ namespace AASD_WebUI.Controllers
         private int pageSize = 10;
         private IAASDService _service;
         // private ResultRepository resultRepository;
-        
+
 
         //Have to use interface and mock
         public SearchResultController(IAASDService service)
@@ -65,7 +65,7 @@ namespace AASD_WebUI.Controllers
 
             RetrieveSearchRequest1 inValue = new RetrieveSearchRequest1();
             inValue.RetrieveSearchRequest = retrieveSearchRequest;
-            
+
 
 
             resultsListViewModel.results = _service.

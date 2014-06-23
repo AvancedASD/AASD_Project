@@ -21,8 +21,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AASD_DataTransferObject", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AASD_BingAPIServiceAgent", "AASD_BingAPIService\AASD_BingAPIServiceAgent.csproj", "{93491D09-8779-45F4-A088-09B50FBCD001}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AASD_Data Access Layer (2)", "AASD_Data Access Layer (2)", "{0C110217-4034-493B-B07E-9C783ADBFB0D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Helpers", "Data Helpers", "{ACD444D6-A99B-43A5-9712-437F237846E5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service Agents", "Service Agents", "{7BD3AC2E-A624-4932-84DB-209F45B034E0}"
@@ -39,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Local.testsettings = Local.testsettings
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeBaseApiServiceAgent", "FreeBaseApiServiceAgent\FreeBaseApiServiceAgent.csproj", "{F5726835-0127-4984-A00D-621F2614DA2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,6 +82,10 @@ Global
 		{525DEA11-68DD-40F2-AFC9-2C0D754FE6D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{525DEA11-68DD-40F2-AFC9-2C0D754FE6D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{525DEA11-68DD-40F2-AFC9-2C0D754FE6D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5726835-0127-4984-A00D-621F2614DA2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5726835-0127-4984-A00D-621F2614DA2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5726835-0127-4984-A00D-621F2614DA2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5726835-0127-4984-A00D-621F2614DA2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,5 +96,6 @@ Global
 		{C721DA3A-B57D-4163-BA92-8878BAF61E75} = {D02B719F-9214-4A10-B10E-298E6B2C481C}
 		{EF9A69EA-896B-49E7-AC15-5236324667D2} = {D02B719F-9214-4A10-B10E-298E6B2C481C}
 		{93491D09-8779-45F4-A088-09B50FBCD001} = {685B5291-8D69-467C-B437-4B264715E12F}
+		{F5726835-0127-4984-A00D-621F2614DA2A} = {685B5291-8D69-467C-B437-4B264715E12F}
 	EndGlobalSection
 EndGlobal

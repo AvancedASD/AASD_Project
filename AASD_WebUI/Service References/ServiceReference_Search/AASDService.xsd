@@ -3,6 +3,7 @@
   <xs:complexType name="QueryContract">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="Query" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Context" nillable="true" type="xs:string" />
       <xs:element minOccurs="1" maxOccurs="1" name="Options" nillable="true" type="xs:string" />
       <xs:element minOccurs="1" maxOccurs="1" name="WebSearchOptions" nillable="true" type="xs:string" />
       <xs:element minOccurs="1" maxOccurs="1" name="Market" nillable="true" type="xs:string" />
