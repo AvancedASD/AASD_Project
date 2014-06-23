@@ -61,7 +61,7 @@ namespace AASD_WebUI.Controllers
             resultsListViewModel.currentQuery = new QueryViewModel() { stringQuery = query, context = context };
 
             RetrieveSearchRequest retrieveSearchRequest = new RetrieveSearchRequest();
-            retrieveSearchRequest.Request = new QueryContract() { Query = query };
+            retrieveSearchRequest.Request = new QueryContract() { Query = query, Context = context };
 
             RetrieveSearchRequest1 inValue = new RetrieveSearchRequest1();
             inValue.RetrieveSearchRequest = retrieveSearchRequest;
