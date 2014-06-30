@@ -6,10 +6,10 @@ using System.Text;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FreeBaseApiServiceAgent.DataContractJSon
+namespace AASD_FreeBaseApiServiceAgent.DataContractJSon
 {
     [DataContract]
-    class DataResultFreeBase
+    public class DataResultFreeBase
     {
         [DataMember]
         public string status { get; set; }

@@ -6,13 +6,13 @@ using AASD_BuisnessLayer.Entities;
 
 namespace AASD_BuisnessLayer.BuisnessLayer_Models.Abstract
 {
-    public interface ISearchBehaviour
+    public interface IDisplayBehaviour
     {
         /// <summary>
-        /// Retrieves the Result from Bing API
+        /// Display the Result from filter result
         /// </summary>
         /// <param name="request">Formed Query </param>
-        /// <returns>List of Results</returns>
-         IList<Result> RetrieveResultsBing(Query request);
+        /// <returns>List of Display Results</returns>
+        IList<Display> DisplayResults(IList<Filter> filteredResult);
     }
 }

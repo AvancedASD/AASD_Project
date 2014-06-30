@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AASD_BuisnessLayer</RootNamespace>
     <AssemblyName>AASD_BuisnessLayer</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -44,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Components\Abstract\IDisplayBehaviour.cs" />
     <Compile Include="Business Components\Abstract\IFilterBehaviour.cs" />
     <Compile Include="Business Components\Abstract\ISearchBehaviour.cs" />
     <Compile Include="Business Components\Abstract\SearchEngine.cs" />
@@ -59,15 +62,26 @@
     <Compile Include="Business Entities\Result.cs" />
     <Compile Include="Business Entities\Query.cs" />
     <Compile Include="Business Components\Enumeration\QueryResultType.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AASD_BingAPIService\AASD_BingAPIServiceAgent.csproj">
       <Project>{93491d09-8779-45f4-a088-09b50fbcd001}</Project>
       <Name>AASD_BingAPIServiceAgent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AASD_Data Access Layer\AASD_Data Access Layer.csproj">
+      <Project>{c721da3a-b57d-4163-ba92-8878baf61e75}</Project>
+      <Name>AASD_Data Access Layer %28AASD_Data Access Layer\AASD_Data Access Layer%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AASD_FreeBaseApiServiceAgent\AASD_FreeBaseApiServiceAgent.csproj">
+      <Project>{f5726835-0127-4984-a00d-621f2614da2a}</Project>
+      <Name>AASD_FreeBaseApiServiceAgent</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AASD_Data_Access_Layer.DataProvider
 {
-    class ResultData : IDataProvider
+    class ResultRepository : IDataProvider
     {
 
         public int insertData(object resultData)

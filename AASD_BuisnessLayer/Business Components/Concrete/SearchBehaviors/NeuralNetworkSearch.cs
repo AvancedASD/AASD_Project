@@ -7,7 +7,7 @@ using AASD_BuisnessLayer.Entities;
 
 namespace AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchBehaviors
 {
-    class NeuralNetworkSearch : ISearchBehaviour
+    class NeuralNetworkSearch 
     {
         public IList<Result> RetrieveResults(Query request)
         {

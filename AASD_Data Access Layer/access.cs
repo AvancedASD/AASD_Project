@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AASD_Data_Access_Layer.DataProvider;
 
 namespace AASD_Data_Access_Layer
 {
@@ -31,8 +32,8 @@ namespace AASD_Data_Access_Layer
             q.Description = "description";
             q.Result_Url = "www.request.com";
             q.Title = "Title";
-            DataProvider.IDataProvider obj = (DataProvider.ResultData)(new DataProvider.ResultData());
-            Console.WriteLine(((DataProvider.IResultData)obj).insertData(q));
+            DataProvider.IDataProvider obj = (DataProvider.ResultRepository)(new ResultRepository());
+            Console.WriteLine(((IResultData)obj).insertData(q));
             
             
 

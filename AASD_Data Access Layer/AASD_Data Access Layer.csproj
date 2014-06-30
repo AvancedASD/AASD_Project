@@ -70,7 +70,9 @@
       <DependentUpon>AASD_DBEntity.edmx</DependentUpon>
       <LastGenOutput>AASD_DBEntity.cs</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <Content Include="App.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -96,8 +98,8 @@
       <DependentUpon>AASD_DBEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="access.cs" />
-    <Compile Include="DataProvider\ResultData.cs" />
-    <Compile Include="DataProvider\QueryData.cs" />
+    <Compile Include="DataProvider\ResultRepository.cs" />
+    <Compile Include="DataProvider\QueryRepository.cs" />
     <Compile Include="DataProvider\IResultData.cs" />
     <Compile Include="DataProvider\IDataProvider.cs" />
     <Compile Include="DataProvider\IQueryData.cs" />

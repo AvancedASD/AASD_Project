@@ -21,6 +21,7 @@ namespace AASD_ServiceLayer.Translators
                 entity = new Query()
                 {
                     SearchQuery = contract.RetrieveSearchRequest.Request.Query,
+                    Context = contract.RetrieveSearchRequest.Request.Context,
                     Adult = contract.RetrieveSearchRequest.Request.Adult,
                     Latitude = contract.RetrieveSearchRequest.Request.Latitude,
                     Longitude = contract.RetrieveSearchRequest.Request.Longitude,
@@ -35,7 +36,7 @@ namespace AASD_ServiceLayer.Translators
             return entity;
         }
 
-        public static List<DataContract.ResultContract> ConvertResultEntityToContract(IList<Result> entityList)
+        public static List<DataContract.ResultContract> ConvertResultEntityToContract(IList<Display> entityList)
         {
             List<ResultContract> contractList = null;
 
@@ -47,9 +48,9 @@ namespace AASD_ServiceLayer.Translators
                     contractList.Add(new ResultContract()
                     {
                         Description = x.Description,
-                        DisplayUrl = x.DisplayUrl,
+                        DisplayUrl = x.URL,
                         Title = x.Title,
-                        Url = x.Url
+                        Url = x.URL
                     });
 
                 });

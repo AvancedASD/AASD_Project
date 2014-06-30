@@ -16,10 +16,13 @@ using Google.Apis.Requests;
 using System.IO;
 using System.Text;
 using RestSharp;
+using AASD_FreeBaseApiServiceAgent;
+using AASD_FreeBaseApiServiceAgent.DataContractJSon;
+using System.Configuration;
 
 namespace Test
 {
-    class Program
+    public class Program
     {
 
         public static string Serialize<T>(T obj)
@@ -60,6 +63,8 @@ namespace Test
             //FreebaseService.SearchRequest request = new FreebaseService.SearchRequest(query) ;
             //string response = request.MqlOutput(query);
             //Console.WriteLine(response);
+            var dd = ConfigurationSettings.AppSettings["asas"];
+            DataResultFreeBase dataResultFreeBase = FreeBaseAPI.Instance.GetFreeBaseServiceResults("Apple", "Product");
 
             Console.WriteLine("Discovery API Sample");
             Console.WriteLine("====================");

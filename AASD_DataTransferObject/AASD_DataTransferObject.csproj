@@ -57,7 +57,7 @@
     </ProjectReference>
     <ProjectReference Include="..\AASD_Data Access Layer\AASD_Data Access Layer.csproj">
       <Project>{c721da3a-b57d-4163-ba92-8878baf61e75}</Project>
-      <Name>AASD_Data Access Layer</Name>
+      <Name>AASD_Data Access Layer %28AASD_Data Access Layer\AASD_Data Access Layer%29</Name>
     </ProjectReference>
     <ProjectReference Include="..\AASD_ServiceLayer\AASD_ServiceLayer.csproj">
       <Project>{7e7f0bac-d7b9-440c-8918-a76889e3ed7b}</Project>

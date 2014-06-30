@@ -1,9 +1,9 @@
 ﻿using System.Runtime.Serialization;
 
-namespace FreeBaseApiServiceAgent.DataContractJSon
+namespace AASD_FreeBaseApiServiceAgent.DataContractJSon
 {
     [DataContract]
-    class ResultFreeBase
+    public class ResultFreeBase
     {
         [DataMember]
         public string mid { get; set; }

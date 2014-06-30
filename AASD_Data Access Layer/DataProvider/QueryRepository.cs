@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AASD_Data_Access_Layer.DataProvider
 {
-    class QueryData : IDataProvider
+    class QueryRepository : IDataProvider
     {
         
         public int insertData(object queryData)
@@ -27,14 +27,6 @@ namespace AASD_Data_Access_Layer.DataProvider
                 throw e;
             }
         }
-
-      
-        /*
-         * public int updateData()
-        {
-            throw new NotImplementedException();
-        }
-         * */
 
         public int deleteData(Guid id )
         {

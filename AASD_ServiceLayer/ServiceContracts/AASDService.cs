@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Web.UI.MobileControls;
-using AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchBehaviors;
 using AASD_BuisnessLayer.Entities;
 using AASD_ServiceLayer.DataContract;
 using AASD_ServiceLayer.MessageContract;
 using AASD_ServiceLayer.Translators;
 using AASD_BuisnessLayer;
+using AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchEngines;
 
 namespace AASD_ServiceLayer
 {
@@ -26,9 +26,9 @@ namespace AASD_ServiceLayer
                 if (request.RetrieveSearchRequest != null)
                 {
 
-                    BingSearch bingSearch = new BingSearch();
-                    IList<Result> resultListEntity =
-                        bingSearch.RetrieveResults(Translators.Translator.ConvertQueryContractTOEntity(request));
+                    SearchEngine_Standart bingSearch = new SearchEngine_Standart();
+                    IList<Display> resultListEntity =
+                        bingSearch.ExecutingSearchEngine(Translators.Translator.ConvertQueryContractTOEntity(request));
                     lstResult = Translator.ConvertResultEntityToContract(resultListEntity);
 
                     retrieveSearchResponse = new RetrieveSearchResponse();

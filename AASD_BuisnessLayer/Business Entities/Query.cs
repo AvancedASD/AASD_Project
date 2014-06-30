@@ -16,6 +16,11 @@ namespace AASD_BuisnessLayer.Entities
         public Guid QueryId { get; set; }
 
         /// <summary>
+        ///Search ID mapped to a particular search
+        /// </summary>
+        public string Context { get; set; }
+
+        /// <summary>
         ///Bing search query Sample Values : xbox
         /// </summary>
         public string SearchQuery { get; set; }

@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 
 
-namespace FreeBaseApiServiceAgent
+namespace AASD_FreeBaseApiServiceAgent
 {
     static class CommonUtility
     {

@@ -6,44 +6,48 @@ using System.Globalization;
 
 // Bing Search API code sample that demonstrates the Web service operation.
 using AASD_BingAPIService.Class;
+using System.Configuration;
 
 namespace AASD_BingAPIService
 {
-    public static class BingSearchAPi
+    public class BingSearchAPi
     {
 
-        // Replace this value with your account key.
+        private static string AccountKey;
+        private static string appName;
 
-        private const string AccountKey = "tSxQSyyi/+iW/7YUsMMYrtL6QVz9O7xxKdpMxXPQPvI=";
 
-        //private static void Main(string[] args)
-        //{
+        private static BingSearchAPi instance;
+        private static object syncRoot = new Object();
 
-        //    try
-        //    {
 
-        //        MakeRequest();
+        public static BingSearchAPi Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    lock (syncRoot)
+                    {
+                        if (instance == null)
+                            instance = new BingSearchAPi();
+                    }
+                }
 
-        //    }
+                return instance;
+            }
+        }
 
-        //    catch (Exception ex)
-        //    {
+        private BingSearchAPi()
+        {
+            AccountKey = ConfigurationSettings.AppSettings["API_Key"];
+            appName = ConfigurationSettings.AppSettings["Application_Name"];
+        }
 
-        //        string innerMessage =
-
-        //            (ex.InnerException != null)
-        //                ? ex.InnerException.Message
-        //                : String.Empty;
-
-        //        Console.WriteLine("{0}\n{1}", ex.Message, innerMessage);
-
-        //    }
-
-        //}
-
-        public static IList<WebResultExt> MakeRequest(QueryExt request)
+        public IList<WebResultExt> MakeRequest(QueryExt request)
         {
             // This is the query expression.
+            AccountKey = "tSxQSyyi/+iW/7YUsMMYrtL6QVz9O7xxKdpMxXPQPvI=";
 
             string query = "Microsoft Products";
 

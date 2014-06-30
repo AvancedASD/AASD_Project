@@ -24,5 +24,10 @@ namespace AASD_BuisnessLayer.Entities
         ///Bing search query Sample Values : xbox
         /// </summary>
         public string Title { get; set; }
+
+        /// <summary>
+        ///Bing search query Sample Values : xbox
+        /// </summary>
+        public string URL { get; set; }
     }
 }
