@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using AAASD_TraceLayer.Concrete;
 using AASD_BuisnessLayer.BuisnessLayer_Models.Abstract;
 using AASD_BuisnessLayer.BusinessGateways;
 using AASD_BuisnessLayer.Entities;
@@ -34,13 +35,14 @@ namespace AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchEngines
             IList<Display> displayResult = null;
             IList<string> contextList = null;
             IList<Filter> filteredData = null;
+            IList<Result> unfilteredList1 = new List<Result>();
             try
             {
                 IList<Result> unfilteredList = this.RetrieveResultsBing(request);
                 BusinessGateway businessGateway = new BusinessGateway();
-                //bool response = businessGateway.PersistResultsToDB(unfilteredList);
+                bool response = businessGateway.PersistResultsToDB(request, unfilteredList);
                 contextList = businessGateway.ConsumingFreeBaseApi(request);
-                //unfilteredList = businessGateway.RetrievingUnfilteredResult(request);
+                unfilteredList1 = businessGateway.RetrievingUnfilteredResult(request);
 
                 //// Need to add the Db Call 
 
@@ -50,7 +52,12 @@ namespace AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchEngines
             }
             catch (Exception e)
             {
+                LogWriter.Instance.writeException(Convert.ToString(this), Convert.ToString(this.GetType()), e.Message);
                 throw e;
+            }
+            finally
+            {
+                LogWriter.Instance.writeTrace(Convert.ToString(this), Convert.ToString(this.GetType()), "tracing - AASD -Business_Layer- successful");
             }
 
             return displayResult;

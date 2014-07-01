@@ -44,6 +44,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.3.1.0.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -98,6 +101,7 @@
     <Content Include="output.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="packages.config" />
     <None Include="Schema\MessageContract.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -112,6 +116,10 @@
     <ProjectReference Include="..\AASD_BuisnessLayer\AASD_BuisnessLayer.csproj">
       <Project>{df680885-1702-4980-8c41-b2b637d2f621}</Project>
       <Name>AASD_BuisnessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AASD_TraceLayer\AAASD_TraceLayer.csproj">
+      <Project>{c51ddbdf-1a2e-4c07-b41d-0d5c3467e40d}</Project>
+      <Name>AAASD_TraceLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

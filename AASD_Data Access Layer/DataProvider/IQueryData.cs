@@ -6,12 +6,12 @@ using AASD_Data_Access_Layer.DataProvider;
 
 namespace AASD_Data_Access_Layer.DataProvider
 {
-    interface IQueryData
+   public interface IQueryData
     {
         int insertData(object queryObject);
        // int updateData(AASD_DB_Query queryObject);
         int deleteData(Guid id);
-        object showData(Guid id);
+        IList<object> showData(Guid id);
 
     }
 }

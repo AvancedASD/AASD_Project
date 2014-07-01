@@ -5,13 +5,15 @@ using System.Text;
 
 namespace AASD_Data_Access_Layer.DataProvider
 {
-    class QueryRepository : IDataProvider
+  public class QueryRepository : IDataProvider
+  //  public class QueryRepository : IQueryData
     {
         
         public int insertData(object queryData)
         {
             try
             {
+                Console.WriteLine((queryData));
                 if (queryData == null || ((AASD_DB_Query)queryData).Query_Id == null 
                     || ((AASD_DB_Query)queryData).Creation_Time == null
                     || ((AASD_DB_Query)queryData).Search_string == null)
@@ -49,10 +51,11 @@ namespace AASD_Data_Access_Layer.DataProvider
             }
         }
 
-        public object showData(Guid id)
+        public IList<object> showData(Guid id)
         {
             try
             {
+                IList<object> oo = new List<object>();
                 if (id == null)
                 {
                     throw new ArgumentNullException("id");
@@ -68,14 +71,16 @@ namespace AASD_Data_Access_Layer.DataProvider
                 returnObject.Search_string = query.Search_string;
                 returnObject.Context = query.Context;
                 returnObject.Creation_Time = query.Creation_Time;
+                oo.Add(returnObject);
+                return oo;
                 
-                return returnObject;
             }
 
             catch (Exception e) 
             {
                 throw e;
             }
+           
         }
     }
 }

@@ -11,6 +11,7 @@ using Freebase4net;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Dynamic;
+using AAASD_TraceLayer.Concrete;
 
 namespace AASD_FreeBaseApiServiceAgent
 {
@@ -65,11 +66,12 @@ namespace AASD_FreeBaseApiServiceAgent
             }
             catch (Exception e)
             {
-
-                throw;
+                LogWriter.Instance.writeException(Convert.ToString(this), Convert.ToString(this.GetType()), e.Message);
+                throw e;
             }
             finally
             {
+                LogWriter.Instance.writeTrace(Convert.ToString(this), Convert.ToString(this.GetType()), "tracing - AASD- Freebase Agent- successful");
             }
 
             return obj;

@@ -7,6 +7,7 @@ using AASD_ServiceLayer.MessageContract;
 using AASD_ServiceLayer.Translators;
 using AASD_BuisnessLayer;
 using AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchEngines;
+using AAASD_TraceLayer.Concrete;
 
 namespace AASD_ServiceLayer
 {
@@ -35,13 +36,14 @@ namespace AASD_ServiceLayer
                     retrieveSearchResponse.listResultContract = lstResult;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
-                throw;
+                LogWriter.Instance.writeException(Convert.ToString(this), Convert.ToString(this.GetType()), e.Message);
+                throw e;
             }
             finally
             {
+                LogWriter.Instance.writeTrace(Convert.ToString(this), Convert.ToString(this.GetType()), "tracing - AASD - Service_Layer- successful");
             }
 
             return retrieveSearchResponse;

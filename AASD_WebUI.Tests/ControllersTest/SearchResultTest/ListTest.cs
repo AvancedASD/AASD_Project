@@ -10,7 +10,7 @@ using AASD_WebUI;
 using System.Reflection;
 using System.Collections.Generic;
 using AASD_WebUI.Controllers;
-using AASD_WebUI.ServiceReference_Search;
+using AASD_WebUI.Proxy;
 
 namespace AASD_WebUI.ControllersTest.SearchResultTest
 {

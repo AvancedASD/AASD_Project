@@ -262,6 +262,10 @@
       <Project>{df680885-1702-4980-8c41-b2b637d2f621}</Project>
       <Name>AASD_BuisnessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AASD_TraceLayer\AAASD_TraceLayer.csproj">
+      <Project>{c51ddbdf-1a2e-4c07-b41d-0d5c3467e40d}</Project>
+      <Name>AAASD_TraceLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\Proxy\" />

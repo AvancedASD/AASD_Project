@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 
 namespace AASD_Data_Access_Layer.DataProvider
 {
-    class ResultRepository : IDataProvider
+    public class ResultRepository : IDataProvider
+  //  public class ResultRepository : IResultData
     {
 
         public int insertData(object resultData)
@@ -23,9 +26,17 @@ namespace AASD_Data_Access_Layer.DataProvider
                 resultObject.AASD_DB_Result.Add(((AASD_DB_Result)resultData));
                 return resultObject.SaveChanges();
             }
-            catch (Exception e)
+            catch (DbEntityValidationException dbEx)
             {
-                throw e;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+                Console.WriteLine(dbEx);
+                throw dbEx;
             }
         }
 
@@ -57,8 +68,9 @@ namespace AASD_Data_Access_Layer.DataProvider
             }
         }
 
-        public object showData(Guid id)
+        public IList<object> showData(Guid id)
         {
+            IList<object> retresobj=new List<object>();
             try
             {
                 if (id == null)
@@ -66,22 +78,33 @@ namespace AASD_Data_Access_Layer.DataProvider
                     throw new ArgumentNullException("id");
                 }
                 AASD_DBEntities resultObject = new AASD_DBEntities();
-                var query = (from q in resultObject.AASD_DB_Result
+               // var query = (from q in resultObject.AASD_DB_Result
+                           //  where q.Query_Id == id
+                            // select q).First();
+                 var querys = (from q in resultObject.AASD_DB_Result
                              where q.Query_Id == id
-                             select q).First();
-
+                             select q);
+                 Console.WriteLine("inside showData results");
+                 Console.WriteLine("querys" + querys);
                 //Assigning query object values to Result Object 
-                AASD_DB_Result returnObject = new AASD_DB_Result();
-                returnObject.Query_Id = query.Query_Id;
-                returnObject.Result_Id = query.Result_Id;
-                returnObject.Title = query.Title;
-                returnObject.Display_Url = query.Display_Url;
-                returnObject.Result_Url = query.Result_Url;
-                returnObject.Description = query.Description;
-                returnObject.Creation_TimeStamp = query.Creation_TimeStamp;
-                
+                foreach (var query in querys)
+                {
+                     AASD_DB_Result returnObject = new AASD_DB_Result();
+                    
+                         returnObject.Query_Id = query.Query_Id;
+                         returnObject.Result_Id = query.Result_Id;
+                         returnObject.Title = query.Title;
+                         returnObject.Display_Url = query.Display_Url;
+                         returnObject.Result_Url = query.Result_Url;
+                         returnObject.Description = query.Description;
+                         returnObject.Creation_TimeStamp = query.Creation_TimeStamp;
+                         Console.WriteLine(returnObject.Display_Url);
+                     
+                     retresobj.Add(returnObject);
+                 }
 
-                return returnObject;
+                 Console.ReadLine();
+                return retresobj;
             }
             catch(Exception e)
             {

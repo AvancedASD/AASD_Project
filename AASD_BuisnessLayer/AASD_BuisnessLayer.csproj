@@ -87,11 +87,15 @@
     </ProjectReference>
     <ProjectReference Include="..\AASD_Data Access Layer\AASD_Data Access Layer.csproj">
       <Project>{c721da3a-b57d-4163-ba92-8878baf61e75}</Project>
-      <Name>AASD_Data Access Layer %28AASD_Data Access Layer\AASD_Data Access Layer%29</Name>
+      <Name>AASD_Data Access Layer</Name>
     </ProjectReference>
     <ProjectReference Include="..\AASD_FreeBaseApiServiceAgent\AASD_FreeBaseApiServiceAgent.csproj">
       <Project>{f5726835-0127-4984-a00d-621f2614da2a}</Project>
       <Name>AASD_FreeBaseApiServiceAgent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AASD_TraceLayer\AAASD_TraceLayer.csproj">
+      <Project>{c51ddbdf-1a2e-4c07-b41d-0d5c3467e40d}</Project>
+      <Name>AAASD_TraceLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,11 +4,6 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ee39edcc11694e32935487eaa2586df4" Name="Diagram1">
-        <EntityTypeShape EntityType="AASD_DBModel.AASD_DB_Query" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AASD_DBModel.AASD_DB_Result" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="AASD_DBModel.FK_AASD_DB_Result_AASD_DB_Query" ManuallyRouted="false" />
-      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

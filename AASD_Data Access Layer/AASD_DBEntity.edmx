@@ -4,14 +4,22 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AASD_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="AASD_DBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="AASD_DBModelStoreContainer">
+          <EntitySet Name="AASD_DB_Query" EntityType="AASD_DBModel.Store.AASD_DB_Query" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AASD_DB_Result" EntityType="AASD_DBModel.Store.AASD_DB_Result" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_AASD_DB_Result_AASD_DB_Query" Association="AASD_DBModel.Store.FK_AASD_DB_Result_AASD_DB_Query">
+            <End Role="AASD_DB_Query" EntitySet="AASD_DB_Query" />
+            <End Role="AASD_DB_Result" EntitySet="AASD_DB_Result" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="AASD_DB_Query">
           <Key>
             <PropertyRef Name="Query_Id" />
           </Key>
           <Property Name="Query_Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Search_string" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Context" Type="nvarchar" MaxLength="50" />
+          <Property Name="Context" Type="nvarchar(max)" />
           <Property Name="Creation_Time" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="AASD_DB_Result">
@@ -22,14 +30,14 @@
           <Property Name="Result_Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Query_Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" />
-          <Property Name="Title" Type="nvarchar" MaxLength="50" />
-          <Property Name="Display_Url" Type="nvarchar" MaxLength="50" />
-          <Property Name="Result_Url" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Display_Url" Type="nvarchar(max)" />
+          <Property Name="Result_Url" Type="nvarchar(max)" />
           <Property Name="Creation_TimeStamp" Type="date" Nullable="false" />
         </EntityType>
         <Association Name="FK_AASD_DB_Result_AASD_DB_Query">
-          <End Role="AASD_DB_Query" Type="Self.AASD_DB_Query" Multiplicity="1" />
-          <End Role="AASD_DB_Result" Type="Self.AASD_DB_Result" Multiplicity="*" />
+          <End Role="AASD_DB_Query" Type="AASD_DBModel.Store.AASD_DB_Query" Multiplicity="1" />
+          <End Role="AASD_DB_Result" Type="AASD_DBModel.Store.AASD_DB_Result" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AASD_DB_Query">
               <PropertyRef Name="Query_Id" />
@@ -39,28 +47,28 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="AASD_DBModelStoreContainer">
-          <EntitySet Name="AASD_DB_Query" EntityType="Self.AASD_DB_Query" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AASD_DB_Result" EntityType="Self.AASD_DB_Result" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_AASD_DB_Result_AASD_DB_Query" Association="Self.FK_AASD_DB_Result_AASD_DB_Query">
-            <End Role="AASD_DB_Query" EntitySet="AASD_DB_Query" />
-            <End Role="AASD_DB_Result" EntitySet="AASD_DB_Result" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="AASD_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="AASD_DBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AASD_DBEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="AASD_DB_Query" EntityType="AASD_DBModel.AASD_DB_Query" />
+          <EntitySet Name="AASD_DB_Result" EntityType="AASD_DBModel.AASD_DB_Result" />
+          <AssociationSet Name="FK_AASD_DB_Result_AASD_DB_Query" Association="AASD_DBModel.FK_AASD_DB_Result_AASD_DB_Query">
+            <End Role="AASD_DB_Query" EntitySet="AASD_DB_Query" />
+            <End Role="AASD_DB_Result" EntitySet="AASD_DB_Result" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="AASD_DB_Query">
           <Key>
             <PropertyRef Name="Query_Id" />
           </Key>
           <Property Name="Query_Id" Type="Guid" Nullable="false" />
-          <Property Name="Search_string" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Context" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Search_string" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Context" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Creation_Time" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="AASD_DB_Result" Relationship="Self.FK_AASD_DB_Result_AASD_DB_Query" FromRole="AASD_DB_Query" ToRole="AASD_DB_Result" />
+          <NavigationProperty Name="AASD_DB_Result" Relationship="AASD_DBModel.FK_AASD_DB_Result_AASD_DB_Query" FromRole="AASD_DB_Query" ToRole="AASD_DB_Result" />
         </EntityType>
         <EntityType Name="AASD_DB_Result">
           <Key>
@@ -69,16 +77,16 @@
           </Key>
           <Property Name="Result_Id" Type="Guid" Nullable="false" />
           <Property Name="Query_Id" Type="Guid" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Display_Url" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Result_Url" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Display_Url" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Result_Url" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Creation_TimeStamp" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="AASD_DB_Query" Relationship="Self.FK_AASD_DB_Result_AASD_DB_Query" FromRole="AASD_DB_Result" ToRole="AASD_DB_Query" />
+          <NavigationProperty Name="AASD_DB_Query" Relationship="AASD_DBModel.FK_AASD_DB_Result_AASD_DB_Query" FromRole="AASD_DB_Result" ToRole="AASD_DB_Query" />
         </EntityType>
         <Association Name="FK_AASD_DB_Result_AASD_DB_Query">
-          <End Role="AASD_DB_Query" Type="Self.AASD_DB_Query" Multiplicity="1" />
-          <End Role="AASD_DB_Result" Type="Self.AASD_DB_Result" Multiplicity="*" />
+          <End Role="AASD_DB_Query" Type="AASD_DBModel.AASD_DB_Query" Multiplicity="1" />
+          <End Role="AASD_DB_Result" Type="AASD_DBModel.AASD_DB_Result" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AASD_DB_Query">
               <PropertyRef Name="Query_Id" />
@@ -88,14 +96,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="AASD_DBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="AASD_DB_Query" EntityType="Self.AASD_DB_Query" />
-          <EntitySet Name="AASD_DB_Result" EntityType="Self.AASD_DB_Result" />
-          <AssociationSet Name="FK_AASD_DB_Result_AASD_DB_Query" Association="Self.FK_AASD_DB_Result_AASD_DB_Query">
-            <End Role="AASD_DB_Query" EntitySet="AASD_DB_Query" />
-            <End Role="AASD_DB_Result" EntitySet="AASD_DB_Result" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -139,9 +139,8 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
