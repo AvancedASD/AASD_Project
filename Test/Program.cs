@@ -9,9 +9,9 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 //using AASD_ServiceLayer;
 using Test.AASDServiceReference;
-using Google.Apis.Freebase.v1;
-using Google.Apis.Services;
-using Google.Apis.Requests;
+//using Google.Apis.Freebase.v1;
+//using Google.Apis.Services;
+//using Google.Apis.Requests;
 //using Newtonsoft.Json;
 using System.IO;
 using System.Text;
@@ -19,6 +19,9 @@ using RestSharp;
 using AASD_FreeBaseApiServiceAgent;
 using AASD_FreeBaseApiServiceAgent.DataContractJSon;
 using System.Configuration;
+using AASD_BuisnessLayer.BuisnessLayer_Models.Abstract;
+using AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchEngines;
+using AASD_BuisnessLayer.Entities;
 
 namespace Test
 {
@@ -44,6 +47,11 @@ namespace Test
             return obj;
         }
 
+        //public DataResultFreeBase GetFreebase(string query, string context)
+        //{
+        //    DataResultFreeBase dataResultFreeBase = FreeBaseAPI.Instance.GetFreeBaseServiceResults(query, context);
+        //}
+
 
         /// <summary>
         /// The main entry point for the application.
@@ -51,7 +59,32 @@ namespace Test
         [STAThread]
         public static void Main()
         {
+            //SearchEngine_Standart c = new SearchEngine_Standart();
+            //AASD_BuisnessLayer.Entities.Query f = new AASD_BuisnessLayer.Entities.Query()
+            //{
+            //    Adult = string.Empty,
+            //    Context = "Product",
+            //    Latitude = string.Empty,
+            //    Longitude = string.Empty,
+            //    Market = "en-us",
+            //    Options = string.Empty,
+            //    QueryId = Guid.NewGuid(),
+            //    SearchQuery = "Apple",
+            //    WebFileType = string.Empty,
+            //    WebSearchOptions = string.Empty,
+            //};
 
+            //IList<Display> display = null;
+            //display = c.ExecutingSearchEngine(f);
+
+            using (AASDServiceClient client = new AASDServiceClient())
+            {
+                RetrieveSearchRequest retrieveSearchRequest = new RetrieveSearchRequest();
+                retrieveSearchRequest.Request = new QueryContract() { Query = "Apple", Market = "en-us", Context = "Product" };
+                ResultContract[] lstResultContracts = client.RetrieveSearch(retrieveSearchRequest);
+
+                Console.WriteLine(lstResultContracts[0].Title);
+            }
 
             //FreebaseService service = new FreebaseService(new BaseClientService.Initializer
             //{
@@ -117,31 +150,31 @@ namespace Test
 
         private async Task Run()
         {
-            string Api_Key = "AIzaSyADil-IR-E-iqu9lCwP1a2DzjjU0jpMSVo";
-            // Create the service.
-            var service = new FreebaseService(new BaseClientService.Initializer
-            {
-                ApplicationName = "AASD_Name",
-                ApiKey = Api_Key,
-            });
+            //string Api_Key = "AIzaSyADil-IR-E-iqu9lCwP1a2DzjjU0jpMSVo";
+            //// Create the service.
+            //var service = new FreebaseService(new BaseClientService.Initializer
+            //{
+            //    ApplicationName = "AASD_Name",
+            //    ApiKey = Api_Key,
+            //});
 
-            // Run the request.
-            Console.WriteLine("Executing a list request...");
-            FreebaseService.SearchRequest v = new FreebaseService.SearchRequest(service);
-            string query = "{'id':Apple,'name':'Apple Product','type':'/Company'}";
-            v.Query = query;
-            //v.ExecuteAsync();
-            //string p = v.Output;
-            //string f = v.MqlOutput;
-            var res = v.Execute();
-            Newtonsoft.Json.Linq.JObject jObject = Newtonsoft.Json.Linq.JObject.Parse(res);
-            DataResult x = Deserialize<DataResult>(res);
+            //// Run the request.
+            //Console.WriteLine("Executing a list request...");
+            //FreebaseService.SearchRequest v = new FreebaseService.SearchRequest(service);
+            //string query = "{'id':Apple,'name':'Apple Product','type':'/Company'}";
+            //v.Query = query;
+            ////v.ExecuteAsync();
+            ////string p = v.Output;
+            ////string f = v.MqlOutput;
+            //var res = v.Execute();
+            //Newtonsoft.Json.Linq.JObject jObject = Newtonsoft.Json.Linq.JObject.Parse(res);
+            //DataResult x = Deserialize<DataResult>(res);
             //var x = jObject.status;
 
-            x.result.ForEach(y =>
-            {
-                Console.WriteLine(y.name);
-            });
+            //x.result.ForEach(y =>
+            //{
+            //    Console.WriteLine(y.name);
+            //});
 
 
             // Display the results.
@@ -153,20 +186,5 @@ namespace Test
             //    }
             //}
         }
-
-        //private async Task Run()
-        //{
-        //    var client = new RestClient();
-        //    client.BaseUrl = "https://www.freebase.com/api/service/mqlread";
-        //    var request = new RestRequest(Method.GET);
-        //    Query q = new Query() { name = "Germany", type = "/Country" };
-        //    string js = q.ToJsonString();
-        //    request.AddParameter("query", js);
-        //    request.RequestFormat = DataFormat.Json;
-        //    RestResponse response = (RestResponse)client.Execute(request);
-        //    Console.WriteLine("My output :" + "\n" + response.Content);
-
-        //}
-
     }
 }

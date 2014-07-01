@@ -4,7 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AASD_WebUI.Models;
-using AASD_WebUI.ServiceReference_Search;
+using AASD_WebUI.Proxy;
+using AASD_BuisnessLayer;
+using AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchEngines;
+using AASD_BuisnessLayer.Entities;
 
 namespace AASD_WebUI.Controllers
 {
@@ -19,6 +22,7 @@ namespace AASD_WebUI.Controllers
                  results[i] = new ResultContract() { Description = query, DisplayUrl = "xxx.com"+i.ToString(), Title = query, Url = "www.xxx.com" };
              }*/
             ResultContract[] results;
+            //List<ResultContract> results;
             using (AASDServiceClient client = new AASDServiceClient())
             {
                 RetrieveSearchRequest retrieveSearchRequest = new RetrieveSearchRequest();
@@ -66,7 +70,23 @@ namespace AASD_WebUI.Controllers
             RetrieveSearchRequest1 inValue = new RetrieveSearchRequest1();
             inValue.RetrieveSearchRequest = retrieveSearchRequest;
 
+            //SearchEngine_Standart c = new SearchEngine_Standart();
+            //AASD_BuisnessLayer.Entities.Query f = new AASD_BuisnessLayer.Entities.Query()
+            //{
+            //    Adult = string.Empty,
+            //    Context = "Product",
+            //    Latitude = string.Empty,
+            //    Longitude = string.Empty,
+            //    Market = "en-us",
+            //    Options = string.Empty,
+            //    QueryId = Guid.NewGuid(),
+            //    SearchQuery = "Apple",
+            //    WebFileType = string.Empty,
+            //    WebSearchOptions = string.Empty,
+            //};
 
+            //IList<Display> display = null;
+            //display = c.ExecutingSearchEngine(f);
 
             resultsListViewModel.results = _service.
                 RetrieveSearch(inValue).listResultContract.

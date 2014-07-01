@@ -72,6 +72,14 @@ namespace AASD_BuisnessLayer.BusinessGateways
             try
             {
                 DataResultFreeBase dataResultFreeBase = FreeBaseAPI.Instance.GetFreeBaseServiceResults(request.SearchQuery, request.Context);
+                if (dataResultFreeBase != null && dataResultFreeBase.result != null && dataResultFreeBase.result.Count > 0)
+                {
+                    contextList = new List<string>();
+                    dataResultFreeBase.result.ForEach(x =>
+                    {
+                        contextList.Add(x.name);
+                    });
+                }
             }
             catch (Exception)
             {

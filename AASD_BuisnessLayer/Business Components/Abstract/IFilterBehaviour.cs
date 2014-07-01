@@ -8,6 +8,6 @@ namespace AASD_BuisnessLayer.BuisnessLayer_Models.Abstract
 {
     public interface IFilterBehavior
     {
-        IList<Filter> GetFilteredData(IList<Result> data, IList<String> context);
+        IList<Filter> GetFilteredData(IList<Result> data, Query request, IList<String> context);
     }
 }

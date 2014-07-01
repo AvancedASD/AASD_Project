@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using AASD_WebUI.Models;
 using System.Web.Routing;
-using AASD_WebUI.ServiceReference_Search;
+using AASD_WebUI.Proxy;
 
 namespace AASD_WebUI.Controllers
 {

@@ -66,6 +66,8 @@ namespace Test.AASDServiceReference {
         
         private string queryField;
         
+        private string contextField;
+        
         private string optionsField;
         
         private string webSearchOptionsField;
@@ -94,6 +96,18 @@ namespace Test.AASDServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string Context {
+            get {
+                return this.contextField;
+            }
+            set {
+                this.contextField = value;
+                this.RaisePropertyChanged("Context");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
         public string Options {
             get {
                 return this.optionsField;
@@ -105,7 +119,7 @@ namespace Test.AASDServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
         public string WebSearchOptions {
             get {
                 return this.webSearchOptionsField;
@@ -117,7 +131,7 @@ namespace Test.AASDServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
         public string Market {
             get {
                 return this.marketField;
@@ -129,7 +143,7 @@ namespace Test.AASDServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
         public string Adult {
             get {
                 return this.adultField;
@@ -141,7 +155,7 @@ namespace Test.AASDServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
         public string Latitude {
             get {
                 return this.latitudeField;
@@ -153,7 +167,7 @@ namespace Test.AASDServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
         public string Longitude {
             get {
                 return this.longitudeField;
@@ -165,7 +179,7 @@ namespace Test.AASDServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
         public string WebFileType {
             get {
                 return this.webFileTypeField;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using AASD_WebUI.ServiceReference_Search;
+using AASD_WebUI.Proxy;
 
 namespace AASD_WebUI.Models
 {

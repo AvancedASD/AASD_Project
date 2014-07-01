@@ -43,7 +43,7 @@ namespace AASD_ServiceLayer
             finally
             {
             }
-            
+
             return retrieveSearchResponse;
         }
     }

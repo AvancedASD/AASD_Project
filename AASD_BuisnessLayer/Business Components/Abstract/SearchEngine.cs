@@ -11,6 +11,7 @@ namespace AASD_BuisnessLayer.BuisnessLayer_Models.Abstract
     public abstract class SearchEngine : ISearchBehaviour, IFilterBehavior, IDisplayBehaviour
     {
         static bool added = false;
+        static bool preAdded = false;
 
         /// <summary>
         /// Retrieves Result from the bing api
@@ -48,15 +49,21 @@ namespace AASD_BuisnessLayer.BuisnessLayer_Models.Abstract
         /// <param name="data"> unfiltered data set</param>
         /// <param name="context">context </param>
         /// <returns>Filtered results</returns>
-        public virtual IList<Filter> GetFilteredData(IList<Result> data, IList<String> context)
+        public virtual IList<Filter> GetFilteredData(IList<Result> data, Query request, IList<String> context)
         {
             IList<Filter> filteredResults = new List<Filter>();
+
+
+            if (context != null && context.Count > 0)
+            {
+
+            }
+
             foreach (Result re in data)
             {
                 added = false;
                 foreach (String a in context)
                 {
-
                     if (re.Description.Contains(a) && added == false)
                     {
                         filteredResults.Add(new Filter()
@@ -76,10 +83,8 @@ namespace AASD_BuisnessLayer.BuisnessLayer_Models.Abstract
                         Console.WriteLine("miss");
 
                     }
-
                 }
 
-                //  Console.WriteLine("arun counter :" + counter);
                 Console.WriteLine(re.Url + "\n" + re.ResultId + "\n" + re.ResulType + "\n" + re.QueryId + "\n" + re.Description);
             }
 
@@ -94,6 +99,21 @@ namespace AASD_BuisnessLayer.BuisnessLayer_Models.Abstract
         public virtual IList<Display> DisplayResults(IList<Filter> filteredResult)
         {
             IList<Display> result = null;
+
+            if (filteredResult != null && filteredResult.Count > 0)
+            {
+                result = new List<Display>();
+                foreach (Filter x in filteredResult)
+                {
+                    result.Add(new Display()
+                    {
+                        Description = x.Description,
+                        Name = x.Title,
+                        Title = x.Title,
+                        URL = x.Url,
+                    });
+                }
+            }
 
             return result;
         }

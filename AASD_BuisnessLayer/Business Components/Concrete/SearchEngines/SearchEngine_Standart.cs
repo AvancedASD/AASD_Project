@@ -19,9 +19,9 @@ namespace AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchEngines
         }
 
 
-        public override IList<Filter> GetFilteredData(IList<Result> data, IList<string> context)
+        public override IList<Filter> GetFilteredData(IList<Result> data, Query request, IList<string> context)
         {
-            return base.GetFilteredData(data, context);
+            return base.GetFilteredData(data, request, context);
         }
 
         public override IList<Display> DisplayResults(IList<Filter> filteredResult)
@@ -44,9 +44,9 @@ namespace AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchEngines
 
                 //// Need to add the Db Call 
 
-                //filteredData = this.GetFilteredData(unfilteredList, contextList);
+                filteredData = this.GetFilteredData(unfilteredList, request, contextList);
 
-                //displayResult = this.DisplayResults(filteredData);
+                displayResult = this.DisplayResults(filteredData);
             }
             catch (Exception e)
             {
