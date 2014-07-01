@@ -52,17 +52,29 @@ namespace AASD_BuisnessLayer.BuisnessLayer_Models.Abstract
         public virtual IList<Filter> GetFilteredData(IList<Result> data, Query request, IList<String> context)
         {
             IList<Filter> filteredResults = new List<Filter>();
-
+            IList<string> newContextList = null;
 
             if (context != null && context.Count > 0)
             {
+                newContextList = new List<string>();
+                newContextList.Add(request.Context);
+                context.ToList().ForEach(x =>
+                {
+                    newContextList.Add(!x.Contains(request.SearchQuery) ? (x) : (x.Replace(request.SearchQuery, "")));
+                });
+
+                newContextList.Remove("");
+                //foreach (string s in newContextList)
+                //{
+                //    if (s.Equals("")) { newContextList.Remove(s); }
+                //}
 
             }
 
-            foreach (Result re in data)
+            foreach (string a in newContextList)
             {
                 added = false;
-                foreach (String a in context)
+                foreach (Result re in data)
                 {
                     if (re.Description.Contains(a) && added == false)
                     {
@@ -85,7 +97,7 @@ namespace AASD_BuisnessLayer.BuisnessLayer_Models.Abstract
                     }
                 }
 
-                Console.WriteLine(re.Url + "\n" + re.ResultId + "\n" + re.ResulType + "\n" + re.QueryId + "\n" + re.Description);
+                //Console.WriteLine(re.Url + "\n" + re.ResultId + "\n" + re.ResulType + "\n" + re.QueryId + "\n" + re.Description);
             }
 
             return filteredResults;
