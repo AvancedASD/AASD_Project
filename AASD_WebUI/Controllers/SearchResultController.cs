@@ -13,24 +13,7 @@ namespace AASD_WebUI.Controllers
 {
     public class ResultRepository
     {
-        //[TestMethod]
-        public IEnumerable<ResultContract> GetFakeResults(string query)
-        {
-            /*ResultContract[] results = new ResultContract[100];
-             for (int i = 0; i < 100; i++)
-             {
-                 results[i] = new ResultContract() { Description = query, DisplayUrl = "xxx.com"+i.ToString(), Title = query, Url = "www.xxx.com" };
-             }*/
-            ResultContract[] results;
-            //List<ResultContract> results;
-            using (AASDServiceClient client = new AASDServiceClient())
-            {
-                RetrieveSearchRequest retrieveSearchRequest = new RetrieveSearchRequest();
-                retrieveSearchRequest.Request = new QueryContract() { Query = query, Context = string.Empty };
-                results = client.RetrieveSearch(retrieveSearchRequest);
-            }
-            return results;
-        }
+       
     }
 
 

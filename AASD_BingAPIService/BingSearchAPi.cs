@@ -8,6 +8,7 @@ using System.Globalization;
 using AASD_BingAPIService.Class;
 using System.Configuration;
 using AAASD_TraceLayer.Concrete;
+using NLog;
 
 namespace AASD_BingAPIService
 {

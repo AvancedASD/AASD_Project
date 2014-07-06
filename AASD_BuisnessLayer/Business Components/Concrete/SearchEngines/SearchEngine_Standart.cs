@@ -35,14 +35,14 @@ namespace AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchEngines
             IList<Display> displayResult = null;
             IList<string> contextList = null;
             IList<Filter> filteredData = null;
-            IList<Result> unfilteredList1 = new List<Result>();
+            IEnumerable<Result> unfilteredList1 = new List<Result>();
             try
             {
                 IList<Result> unfilteredList = this.RetrieveResultsBing(request);
                 BusinessGateway businessGateway = new BusinessGateway();
                 bool response = businessGateway.PersistResultsToDB(request, unfilteredList);
                 contextList = businessGateway.ConsumingFreeBaseApi(request);
-                unfilteredList1 = businessGateway.RetrievingUnfilteredResult(request);
+                unfilteredList1 = businessGateway.RetrievingUnfilteredResult<Result>(request);
 
                 //// Need to add the Db Call 
 

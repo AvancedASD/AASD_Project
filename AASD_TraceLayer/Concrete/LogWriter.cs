@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using AAASD_TraceLayer.Abstract;
+using NLog;
+using System.Globalization;
 
 namespace AAASD_TraceLayer.Concrete
 {
@@ -24,22 +26,6 @@ namespace AAASD_TraceLayer.Concrete
             System.IO.Directory.CreateDirectory(folderName);
             tracePath = System.IO.Path.Combine(folderName, TraceFileName);
             exceptionFilePath = System.IO.Path.Combine(folderName, ExceptionFileName);
-            if (!File.Exists(tracePath))
-            {
-                File.Create(tracePath);
-
-            }
-
-            writeTraceLines = File.AppendText(tracePath);
-            writeTraceLines.WriteLine(DateTime.Now + ":**Trace File Initialized**");
-
-            if (!File.Exists(exceptionFilePath))
-            {
-                File.Create(exceptionFilePath);
-            }
-            writeExceptionLines = File.AppendText(exceptionFilePath);
-            writeExceptionLines.WriteLine(DateTime.Today + ":**Exception File Initialized**");
-
         }
 
         public static LogWriter Instance
@@ -56,14 +42,35 @@ namespace AAASD_TraceLayer.Concrete
 
         public void writeException(String fileName, String methodName, String message)
         {
-            writeExceptionLines = File.AppendText(ExceptionFileName);
-            writeExceptionLines.WriteLine(DateTime.Today + ":" + fileName + ":" + methodName + "():" + message);
+            if (!File.Exists(exceptionFilePath))
+            {
+                File.Create(exceptionFilePath);
+            }
+            writeExceptionLines = File.AppendText(exceptionFilePath);
+            writeTraceLines.WriteLine();
+            writeTraceLines.WriteLine("---------------------------------Start of Exception---------------------------------------------------------");
+            writeTraceLines.WriteLine(Convert.ToString(DateTime.UtcNow, CultureInfo.CurrentCulture) + ":**Exception File Initialized**");
+            writeTraceLines.WriteLine("------------------------------------------------------------------------------------------------------");
+            writeExceptionLines.WriteLine(Convert.ToString(DateTime.UtcNow, CultureInfo.CurrentCulture) + ":" + fileName + ":" + methodName + "():" + message);
+            writeTraceLines.WriteLine("----------------------------------------END of Exception----------------------------------------------");
+            writeTraceLines.WriteLine();
             writeExceptionLines.Close();
         }
         public void writeTrace(String fileName, String methodName, String message)
         {
-            writeTraceLines = File.AppendText(TraceFileName);
-            writeTraceLines.WriteLine(DateTime.Today + ":" + fileName + ":" + methodName + "():" + message);
+            if (!File.Exists(tracePath))
+            {
+                File.Create(tracePath);
+
+            }
+            writeTraceLines = File.AppendText(tracePath);
+            writeTraceLines.WriteLine();
+            writeTraceLines.WriteLine("---------------------------------Start of trace---------------------------------------------------------");
+            writeTraceLines.WriteLine(Convert.ToString(DateTime.UtcNow, CultureInfo.CurrentCulture) + ":**Trace File Initialized**");
+            writeTraceLines.WriteLine("--------------------------------------------------------------------------------------------------------");
+            writeTraceLines.WriteLine(Convert.ToString(DateTime.UtcNow, CultureInfo.CurrentCulture) + ":" + fileName + ":" + methodName + "():" + message);
+            writeTraceLines.WriteLine("-----------------------------------------End of Trace------------------------------------------------------");
+            writeTraceLines.WriteLine();
             writeTraceLines.Close();
         }
     }

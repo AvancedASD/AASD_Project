@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Configuration;
 
 namespace AASD_Data_Access_Layer.DataProvider
 {
-  public class QueryRepository : IDataProvider
-  //  public class QueryRepository : IQueryData
+    public class QueryRepository : IDataProvider
+    //  public class QueryRepository : IQueryData
     {
-        
+
         public int insertData(object queryData)
         {
             try
             {
                 Console.WriteLine((queryData));
-                if (queryData == null || ((AASD_DB_Query)queryData).Query_Id == null 
+                if (queryData == null || ((AASD_DB_Query)queryData).Query_Id == null
                     || ((AASD_DB_Query)queryData).Creation_Time == null
                     || ((AASD_DB_Query)queryData).Search_string == null)
                 {
@@ -24,13 +25,13 @@ namespace AASD_Data_Access_Layer.DataProvider
                 queryObject.AASD_DB_Query.Add((AASD_DB_Query)queryData);
                 return queryObject.SaveChanges();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw e;
             }
         }
 
-        public int deleteData(Guid id )
+        public int deleteData(Guid id)
         {
             try
             {
@@ -44,8 +45,8 @@ namespace AASD_Data_Access_Layer.DataProvider
                 queryObject.AASD_DB_Result.Remove(deleteResult);
                 queryObject.AASD_DB_Query.Remove(deleteQuery);
                 return queryObject.SaveChanges();
-             }
-            catch(Exception e)
+            }
+            catch (Exception e)
             {
                 throw e;
             }
@@ -64,7 +65,7 @@ namespace AASD_Data_Access_Layer.DataProvider
                 var query = (from q in queryObject.AASD_DB_Query
                              where q.Query_Id == id
                              select q).First();
-                
+
                 //Assigning query object values to Result Object
                 AASD_DB_Query returnObject = new AASD_DB_Query();
                 returnObject.Query_Id = query.Query_Id;
@@ -73,14 +74,14 @@ namespace AASD_Data_Access_Layer.DataProvider
                 returnObject.Creation_Time = query.Creation_Time;
                 oo.Add(returnObject);
                 return oo;
-                
+
             }
 
-            catch (Exception e) 
+            catch (Exception e)
             {
                 throw e;
             }
-           
+
         }
     }
 }

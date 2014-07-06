@@ -8,6 +8,7 @@ using AASD_ServiceLayer.Translators;
 using AASD_BuisnessLayer;
 using AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchEngines;
 using AAASD_TraceLayer.Concrete;
+using NLog;
 
 namespace AASD_ServiceLayer
 {
