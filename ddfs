@@ -1,0 +1,170 @@
+[33mcommit 18cf06a36c725f7b7c88d9491f85d6c3ecf7468f[m
+Author: AvancedASD <AdvancesASD@mail.ru>
+Date:   Fri Jun 6 20:20:07 2014 +0200
+
+    Added tests. Changed WebUI
+
+[33mcommit a37240565e5cdc1ee3603a83acaff8ad3e15b1b9[m
+Author: santosh_rajaguru <sanit4u@gmail.com>
+Date:   Thu Jun 5 13:44:14 2014 +0200
+
+    all the layers
+
+[33mcommit 0af92033472b11b91e89b917519ce713f4f83b47[m
+Author: AvancedASD <AdvancesASD@mail.ru>
+Date:   Thu Jun 5 00:35:41 2014 +0200
+
+    updated WebUI
+
+[33mcommit 85d925b36430af45a537613715525565401a7f56[m
+Author: AvancedASD <AdvancesASD@mail.ru>
+Date:   Wed Jun 4 21:49:30 2014 +0200
+
+    hz
+
+[33mcommit e39252fc7798a41556e374c35f8d0e7d222fbc64[m
+Merge: 4ba8dda eafc4a0
+Author: AvancedASD <AdvancesASD@mail.ru>
+Date:   Wed Jun 4 21:46:24 2014 +0200
+
+    test
+
+[33mcommit 4ba8dda677992e9bb4669769d19b8b42e17983f6[m
+Author: AvancedASD <AdvancesASD@mail.ru>
+Date:   Wed Jun 4 21:40:54 2014 +0200
+
+    some changes
+
+[33mcommit eafc4a0283d8c0f40030ced144d5f2a6c371bdc7[m
+Merge: 6bd84d2 28cbfe8
+Author: juhigaba <juhi_gaba@yahoo.com>
+Date:   Mon Jun 2 15:49:33 2014 +0200
+
+    Merge branch 'develop' of https://github.com/AvancedASD/AASD_Project
+
+[33mcommit 6bd84d266241286bf5f237f78756ab6fa3a67035[m
+Author: juhigaba <juhi_gaba@yahoo.com>
+Date:   Mon Jun 2 15:49:16 2014 +0200
+
+    s
+
+[33mcommit 28cbfe859c03c59c33523caa5e85b88e51f0ab16[m
+Author: santosh_rajaguru <sanit4u@gmail.com>
+Date:   Mon Jun 2 15:41:43 2014 +0200
+
+    Service tested locally and done
+
+[33mcommit 2d6160b0bf700bffa030ee040d939fb6114ad401[m
+Author: santosh_rajaguru <sanit4u@gmail.com>
+Date:   Sat May 31 20:03:35 2014 +0200
+
+    Service_layer
+
+[33mcommit 21c4e4998cc00ba411ae04e7706ab3944cff6b60[m
+Merge: 3ed1d90 7765d22
+Author: santosh_rajaguru <sanit4u@gmail.com>
+Date:   Tue May 27 15:06:02 2014 +0200
+
+    Merge branch 'develop' of https://github.com/AvancedASD/AASD_Project
+
+[33mcommit 3ed1d906442bb0a437267cf6ad3ba5e10d82328d[m
+Author: santosh_rajaguru <sanit4u@gmail.com>
+Date:   Tue May 27 14:49:12 2014 +0200
+
+    serviceLayer
+
+[33mcommit 7765d2206b8f532e42c51b25879eb63c03517edc[m
+Author: AvancedASD <AdvancesASD@mail.ru>
+Date:   Tue May 27 13:08:26 2014 +0200
+
+    Ivan. A littlge bit organised Presentation Layer
+
+[33mcommit 8db854d35a63a17e4ab40f42229835d5861e8ee9[m
+Author: AvancedASD <AdvancesASD@mail.ru>
+Date:   Mon May 26 16:43:52 2014 +0200
+
+    Ivan. A little bit organized structure of the project
+
+[33mcommit 1ace19260f08367a0c16d6db3029a23e16052f3f[m
+Author: santosh_rajaguru <sanit4u@gmail.com>
+Date:   Mon May 26 01:38:18 2014 +0200
+
+    Code Search done.
+
+[33mcommit c3c121a787246f512bb1bd64d99a295d11a5a244[m
+Author: santosh_rajaguru <sanit4u@gmail.com>
+Date:   Sun May 25 00:12:11 2014 +0200
+
+    rename(APiservice and DTO)
+
+[33mcommit 0750d5ea186b5c77327a49d7d782ecbd293b754b[m
+Author: santosh_rajaguru <sanit4u@gmail.com>
+Date:   Sat May 24 23:51:32 2014 +0200
+
+    adding Bing APi integration , Entity extension, Interface addition(display), concrete classes using entities
+
+[33mcommit 04717f341b679906fef3c9419183d74ee52b949c[m
+Author: santosh_rajaguru <sanit4u@gmail.com>
+Date:   Sat May 24 17:17:15 2014 +0200
+
+    added DTO to WebUI
+
+[33mcommit 1af327cd143ebfc16d56e616a8e1ebca34d980ac[m
+Author: santosh_rajaguru <sanit4u@gmail.com>
+Date:   Sat May 24 16:36:18 2014 +0200
+
+    rename Entity
+
+[33mcommit fedc0743888673faca4e6aa1b4a526ad89b087d0[m
+Author: santosh_rajaguru <sanit4u@gmail.com>
+Date:   Fri May 23 11:11:40 2014 +0200
+
+    change_santosh
+
+[33mcommit a2ec9bc63dd775bbd58b488b6f827e5e003b4b11[m
+Author: santosh_rajaguru <sanit4u@gmail.com>
+Date:   Wed May 21 23:23:37 2014 +0200
+
+    checkig
+
+[33mcommit 9db940e1e3eb748f597041a8a82f0b6277067a24[m
+Author: juhigaba <juhi_gaba@yahoo.com>
+Date:   Wed May 21 23:20:17 2014 +0200
+
+    test
+
+[33mcommit 769bd7caf3f1903e2b5d139c63e8cb5ec20a9e91[m
+Author: juhigaba <juhi_gaba@yahoo.com>
+Date:   Wed May 21 23:14:14 2014 +0200
+
+    juhi
+
+[33mcommit b7e0737781c5e6e6b70bdf6e86aaa76ce0dc4566[m
+Author: juhigaba <juhi_gaba@yahoo.com>
+Date:   Wed May 21 23:09:25 2014 +0200
+
+    testing_juhi
+
+[33mcommit 3e9da99db47595453d9da456d48dfb26b61d4473[m
+Author: santosh_rajaguru <sanit4u@gmail.com>
+Date:   Wed May 21 19:41:23 2014 +0200
+
+    addedDTO&changes in serviceLayer
+
+[33mcommit 899840a130aba1f8036ba7e18dd1071735e06d3c[m
+Author: santosh_rajaguru <sanit4u@gmail.com>
+Date:   Wed May 21 18:09:11 2014 +0200
+
+    ENTITY_SANTOSH
+
+[33mcommit c6c804398817f03a8d038794489ed56f8fbe9954[m
+Author: AvancedASD <AdvancesASD@mail.ru>
+Date:   Sun May 18 09:14:45 2014 +0200
+
+    Add all files
+
+[33mcommit dad6ccaba2b3deefac4752ac2af1340fca443160[m
+Author: AvancedASD <AdvancesASD@mail.ru>
+Date:   Sun May 18 08:42:33 2014 +0200
+
+    Add readmy file

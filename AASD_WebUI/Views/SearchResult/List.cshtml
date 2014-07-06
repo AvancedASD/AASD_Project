@@ -1,0 +1,31 @@
+﻿@model AASD_WebUI.Models.ResultListViewModel
+@{
+    ViewBag.Title = "List of search results";
+}
+
+<div class="Result_info">
+    <h2>Search results for a request: @Model.currentQuery.stringQuery</h2>
+</div>
+
+<div class="Result_table">
+    <ul>
+        @foreach (var result in Model.results)
+        {            
+            <li>
+                <h2> <a href="@result.Url" >@result.Title</a>  </h2>
+                <h3>@result.Description </h3>
+                           
+            </li>           
+        }
+    </ul>
+</div>
+
+<div class="pager">
+    @Html.PageLinks(Model.pagingInfo, x => Url.Action("List", "SearchResult", new
+{
+    query = Model.currentQuery.stringQuery,
+    context = Model.currentQuery.context,
+    page = x
+}))
+</div>
+

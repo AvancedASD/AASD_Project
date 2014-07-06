@@ -1,0 +1,167 @@
+﻿body {
+    font-size: .85em;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+
+DIV.Nav_search_index {
+    padding-top: 20px;
+    position: fixed;
+    left: 25%;
+}
+
+    DIV.Nav_search_index form {
+    }
+
+    DIV.Nav_search_index label {
+        margin: 0 auto;
+    }
+
+
+    DIV.Nav_search_index DIV.Search_inputs {
+        margin-bottom: 1em;
+        background-color: yellowgreen;
+    }
+
+    DIV.Nav_search_index #stringQuery {
+        width: 30em;
+        height: 2em;
+        margin-bottom: 0.5em;
+        margin-left: 0.5em;
+        margin-top: 0.5em;
+        margin-top: 0.5em;
+    }
+
+    DIV.Nav_search_index #context {
+        height: 2em;
+    }
+
+    DIV.Nav_search_index #btn_search {
+        width: 20em;
+        height: 2em;
+        font-size: large;
+        margin-left: 20%;
+    }
+
+    DIV.Nav_search_index img {
+        padding-left: 25%;
+    }
+
+DIV.pager {
+    text-align: right;
+    border-top: 2px solid silver;
+    padding: .5em 0 0 0;
+    margin-top: 1em;
+}
+
+    DIV.pager A {
+        font-size: 1.1em;
+        color: #666;
+        text-decoration: none;
+        padding: 0 .4em 0 .4em;
+    }
+
+        DIV.pager A:hover {
+            background-color: Silver;
+        }
+
+        DIV.pager A.selected {
+            background-color: #353535;
+            color: White;
+        }
+
+/*Results*/
+DIV.Result_table {
+    border-top: 1px dotted gray;
+    padding-top: .7em;
+    margin-bottom: .7em;
+}
+
+    DIV.Result_table ul {
+        list-style-type: square;
+        border-top: none;
+        padding-top: 0;
+    }
+
+        DIV.Result_table ul li {
+            background-color: ActiveBorder;
+            background-repeat: no-repeat;
+            background-position: 0px 5px;
+            padding-left: 14px;
+            padding-bottom: 10px;
+        }
+
+
+        DIV.Result_table ul H2 {
+            font-size: 1.3em;
+            margin: 0 0 .25em 0;
+            padding-top: 0;
+        }
+
+
+
+        DIV.Result_table ul H3 {
+            font-size: 1.0em;
+            margin: 0 0 .25em 0;
+            padding-top: 0;
+        }
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}

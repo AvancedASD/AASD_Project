@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+</head>
+
+<body>
+    @model AASD_WebUI.Models.QueryViewModel
+    @{
+        ViewBag.Title = "AASD search";
+        Layout = null;
+    }
+    <div class="Nav_search_index">
+        <img id="img_logo" alt="Logo" src="@Url.Content("~/Content/Images/logo.png")" />
+        @using (Html.BeginForm())
+        {
+            <div class="Search_inputs">                
+                @Html.EditorFor(m => m.stringQuery)
+                <label> Context: </label>
+                @Html.EditorFor(m => m.context)
+            </div>           
+            <input id="btn_search" type="submit" value="Search" />
+                       
+        }
+    </div>
+
+    @*<form action="Search" method="post">
+    <input id="request" name="request" type="text" value="sa" />
+     <p><input id="Submit_request" formaction="@(Url.Action("Search", "Response"))" type="submit" value="Search" /></p>
+ </form>*@
+
+</body>
+</html>
+
+
+
+
+
+

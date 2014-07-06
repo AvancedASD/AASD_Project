@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="AASD_Contracts/Message" elementFormDefault="qualified" targetNamespace="AASD_Contracts/Message" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:3886/HostDevServer/AASDService.svc?xsd=xsd1" namespace="AASD_Contracts/Data" />
+  <xs:element name="RetrieveSearchRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="AASD_Contracts/Data" minOccurs="0" maxOccurs="1" name="Request" type="q1:QueryContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listResultContract" type="tns:ArrayOfResultContract" />
+  <xs:complexType name="ArrayOfResultContract">
+    <xs:sequence>
+      <xs:element xmlns:q2="AASD_Contracts/Data" minOccurs="0" maxOccurs="unbounded" name="Response" type="q2:ResultContract" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

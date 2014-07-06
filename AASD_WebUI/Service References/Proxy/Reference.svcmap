@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6e676d20-261c-4dc3-9f58-cdd0ebfcc6a6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:3886/HostDevServer/AASDService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AASDService.xsd" MetadataType="Schema" ID="d9c984a2-9d29-4dc3-a7b9-8fd0a8accf32" SourceId="1" SourceUrl="http://localhost:3886/HostDevServer/AASDService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AASDService.wsdl" MetadataType="Wsdl" ID="d28289db-044e-42ae-ad69-4aecdb2e14e1" SourceId="1" SourceUrl="http://localhost:3886/HostDevServer/AASDService.svc?wsdl" />
+    <MetadataFile FileName="AASDService1.xsd" MetadataType="Schema" ID="6430b56c-e8ac-46dd-9df1-8a620fa312e0" SourceId="1" SourceUrl="http://localhost:3886/HostDevServer/AASDService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AASDService.disco" MetadataType="Disco" ID="97f0e910-fe82-4aa9-96f9-d93a5c6e242c" SourceId="1" SourceUrl="http://localhost:3886/HostDevServer/AASDService.svc?disco" />
+    <MetadataFile FileName="AASDService1.wsdl" MetadataType="Wsdl" ID="8f99d320-8ed5-44c8-9e26-3b2ed78bc90a" SourceId="1" SourceUrl="http://localhost:3886/HostDevServer/AASDService.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
