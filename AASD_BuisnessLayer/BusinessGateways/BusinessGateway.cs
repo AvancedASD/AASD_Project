@@ -15,7 +15,7 @@ using AASD_Data_Access_Layer;
 using AASD_BuisnessLayer.Enumeration;
 using System.Data.SqlClient;
 using System.Dynamic;
-
+///Created by Arun
 namespace AASD_BuisnessLayer.BusinessGateways
 {
     /// <summary>
@@ -125,8 +125,8 @@ namespace AASD_BuisnessLayer.BusinessGateways
             }
         }
 
-
-
+        #region comment
+        /*
         public IEnumerable<T> RetrievingUnfilteredResult<T>(Query request)
         {
             var properties = typeof(T).GetProperties();
@@ -155,172 +155,118 @@ namespace AASD_BuisnessLayer.BusinessGateways
                 }
             }
         }
+        */
+        #endregion
+
+        public IList<Result> RetrievingUnfilteredResult(Query request)
+        {
+
+            IList<Result> unFilteredResults = new List<Result>();
+            IList<object> op = null;
+        
 
 
-        //public IList<Result> RetrievingUnfilteredResult(Query request)
-        //{
-        //    IList<Result> unFilteredResults = new List<Result>();
-        //    IList<object> op = null;
-        //    SqlDataReader reader;
-        //    using (var connection = new SqlConnection("yourConnectionString"))
-        //    {
-        //        connection.Open();
-        //        string retrievalQuery = "select * from AASD_DB_Result";
-        //        SqlCommand queryCMD = new SqlCommand(retrievalQuery, connection);
+            try
+            {
+                Console.WriteLine("retrieve results method new");
+                //calling DB
+                IDataProvider dataobjret = (ResultRepository)(new ResultRepository());
 
-        //        reader = queryCMD.ExecuteReader();
+                // IResultData retresobj = new ResultRepository();
+                op = ((IResultData)dataobjret).showData(request.QueryId);
+                foreach (AASD_DB_Result o in op)
+                {
+                    Result r = new Result()
+                    {
+                        ResultId = o.Result_Id,
+                        QueryId = o.Query_Id,
+                        DisplayUrl = o.Display_Url,
+                        Title = o.Title,
+                        Description = o.Description,
+                        Url = o.Result_Url,
+                        ResulType = QueryResultType.Unfiltered
+                    };
+                    unFilteredResults.Add(r);
 
+                }
 
-        //    }
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+            finally { }
 
-
-
-
-        //    try
-        //    {
-        //        Console.WriteLine("retrieve results method new");
-        //        //calling DB
-        //        IDataProvider dataobjret = (ResultRepository)(new ResultRepository());
-
-        //        // IResultData retresobj = new ResultRepository();
-        //        op = ((IResultData)dataobjret).showData(request.QueryId);
-        //        foreach (AASD_DB_Result o in op)
-        //        {
-        //            Result r = new Result()
-        //            {
-        //                ResultId = o.Result_Id,
-        //                QueryId = o.Query_Id,
-        //                DisplayUrl = o.Display_Url,
-        //                Title = o.Title,
-        //                Description = o.Description,
-        //                Url = o.Result_Url,
-        //                ResulType = QueryResultType.Unfiltered
-        //            };
-        //            unFilteredResults.Add(r);
-
-        //        }
-
-        //    }
-        //    catch (Exception)
-        //    {
-
-        //        throw;
-        //    }
-        //    finally { }
-
-        //    return unFilteredResults;
+            return unFilteredResults;
 
 
-        //}
+        }
 
         public bool PersistResultsToDB(Query q, IList<Result> unfilteredList)
         {
             bool queryResponse = false;
             bool resultResponse = false;
 
-            string connnectionString = "Data Source=PINTU-THINK\\PINTU;Initial Catalog=AASD_DB;Persist Security Info=True;User ID=sa;Password=sa;MultipleActiveResultSets=True;App=EntityFramework";
-            string insertQuery = "INSERT INTO [dbo].[AASD_DB_Query]([Query_Id],[Search_string],[Context],[Creation_Time])" +
-     "VALUES('" + q.QueryId + "'"
-     + ",'" + q.SearchQuery + "','" + q.Context + "','" + System.DateTime.UtcNow + "')";
-            using (var conn = new SqlConnection(connnectionString))
-            {
-                using (var comm = new SqlCommand(insertQuery, conn))
-                {
-                    conn.Open();
-                    int reader = comm.ExecuteNonQuery();
-                    queryResponse = reader > 0 ? true : false;
-                }
-
-                foreach (Result r in unfilteredList)
-                {
-                    string insertResult = "INSERT INTO [dbo].[AASD_DB_Result]"
-           + "([Result_Id]"
-           + ",[Query_Id]"
-           + ",[Description]"
-           + ",[Title]"
-           + ",[Display_Url]"
-           + ",[Result_Url]"
-           + ",[Creation_TimeStamp])"
-           + "VALUES('" + r.ResultId + "','" + r.QueryId + "','" +
-           (r.Description.Contains("'") ? r.Description.Replace("'", " ") : (r.Description.Contains("?") ? r.Description.Replace("?", " ") : r.Description))
-
-           + "','" +
-           (r.Title.Contains("'") ? r.Title.Replace("'", " ") : (r.Title.Contains("?") ? r.Title.Replace("?", " ") : r.Title))
-           + "','" +
-            (r.DisplayUrl.Contains("'") ? r.DisplayUrl.Replace("'", " ") : (r.DisplayUrl.Contains("?") ? r.DisplayUrl.Replace("?", " ") : r.DisplayUrl))
-           + "','" + r.Url + "','" + System.DateTime.Now + "')";
-
-                    using (var comm = new SqlCommand(insertResult, conn))
-                    {
-                        int reader = comm.ExecuteNonQuery();
-                        resultResponse = reader > 0 ? true : false;
-                    }
-
-                }
-                conn.Close();
-            }
-
-            return queryResponse == resultResponse;
             #region comment
-
+            #endregion
 
             ////throw new NotImplementedException();
             //// IData
-            //int res1;
-            //int res2;
-            //Console.WriteLine("isnide persist");
-            //try
-            //{
-            //    IDataProvider queryobj = (QueryRepository)(new QueryRepository());
-            //    IDataProvider dataobj = (ResultRepository)(new ResultRepository());
+            int res1;
+            int res2;
+            Console.WriteLine("isnide persist");
+            try
+            {
+                IDataProvider queryobj = (QueryRepository)(new QueryRepository());
+                IDataProvider dataobj = (ResultRepository)(new ResultRepository());
 
-            //    // IQueryData queryobj = new QueryRepository();
-            //    //QueryforDB ap = new QueryforDB();
-            //    AASD_DB_Query ap = new AASD_DB_Query();
+                // IQueryData queryobj = new QueryRepository();
+                //QueryforDB ap = new QueryforDB();
+                AASD_DB_Query ap = new AASD_DB_Query();
 
-            //    ap.Context = q.Context;
-            //    ap.Query_Id = q.QueryId;
-            //    ap.Search_string = q.SearchQuery;
-            //    ap.Creation_Time = System.DateTime.Now;
-            //    res1 = ((IQueryData)queryobj).insertData(ap);
-            //    // IResultData dataobj = new ResultRepository();
-            //    foreach (Result r in unfilteredList)
-            //    {
+                ap.Context = q.Context;
+                ap.Query_Id = q.QueryId;
+                ap.Search_string = q.SearchQuery;
+                ap.Creation_Time = System.DateTime.Now;
+                res1 = ((IQueryData)queryobj).insertData(ap);
+                // IResultData dataobj = new ResultRepository();
+                foreach (Result r in unfilteredList)
+                {
 
-            //        AASD_DB_Result resdbobj = new AASD_DB_Result()
-            //        {
-            //            Query_Id = q.QueryId,
-            //            Result_Id = r.ResultId,
-            //            // Display_Url =du,
-            //            Display_Url = r.DisplayUrl,
-            //            Creation_TimeStamp = System.DateTime.Now,
-            //            Description = r.Description,
-            //            //Result_Url = ru,
-            //            Result_Url = r.Url,
-            //            //if(r.Title.Length>50)
-            //            //Title = titl
-            //            Title = r.Title
-            //            // else
-            //            //   Title=r.Title
-
-
-            //        };
+                    AASD_DB_Result resdbobj = new AASD_DB_Result()
+                    {
+                        Query_Id = q.QueryId,
+                        Result_Id = r.ResultId,
+                        // Display_Url =du,
+                        Display_Url = r.DisplayUrl,
+                        Creation_TimeStamp = System.DateTime.Now,
+                        Description = r.Description,
+                        //Result_Url = ru,
+                        Result_Url = r.Url,
+                        //if(r.Title.Length>50)
+                        //Title = titl
+                        Title = r.Title
+                        // else
+                        //   Title=r.Title
 
 
-            //        res2 = ((IResultData)dataobj).insertData(resdbobj);
+                    };
 
-            //    }
-            //}
-            //catch (Exception e)
-            //{
-            //    throw e;
-            //}
-            //if (res1 == 1)
-            //    return true;
-            //else
-            //    return false;
-            #endregion
+
+                    res2 = ((IResultData)dataobj).insertData(resdbobj);
+
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            if (res1 == 1)
+                return true;
+            else
+                return false;
+            
         }
     }
 }

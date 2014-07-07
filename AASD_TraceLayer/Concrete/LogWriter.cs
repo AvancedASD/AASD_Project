@@ -8,6 +8,7 @@ using AAASD_TraceLayer.Abstract;
 using NLog;
 using System.Globalization;
 
+///Created by Arun & Santosh
 namespace AAASD_TraceLayer.Concrete
 {
     public class LogWriter : IExceptionLogger, ITraceLogger
@@ -47,13 +48,13 @@ namespace AAASD_TraceLayer.Concrete
                 File.Create(exceptionFilePath);
             }
             writeExceptionLines = File.AppendText(exceptionFilePath);
-            writeTraceLines.WriteLine();
-            writeTraceLines.WriteLine("---------------------------------Start of Exception---------------------------------------------------------");
-            writeTraceLines.WriteLine(Convert.ToString(DateTime.UtcNow, CultureInfo.CurrentCulture) + ":**Exception File Initialized**");
-            writeTraceLines.WriteLine("------------------------------------------------------------------------------------------------------");
+            writeExceptionLines.WriteLine();
+            writeExceptionLines.WriteLine("---------------------------------Start of Exception---------------------------------------------------------");
+            writeExceptionLines.WriteLine(Convert.ToString(DateTime.UtcNow, CultureInfo.CurrentCulture) + ":**Exception File Initialized**");
+            writeExceptionLines.WriteLine("------------------------------------------------------------------------------------------------------");
             writeExceptionLines.WriteLine(Convert.ToString(DateTime.UtcNow, CultureInfo.CurrentCulture) + ":" + fileName + ":" + methodName + "():" + message);
-            writeTraceLines.WriteLine("----------------------------------------END of Exception----------------------------------------------");
-            writeTraceLines.WriteLine();
+            writeExceptionLines.WriteLine("----------------------------------------END of Exception----------------------------------------------");
+            writeExceptionLines.WriteLine();
             writeExceptionLines.Close();
         }
         public void writeTrace(String fileName, String methodName, String message)

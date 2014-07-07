@@ -4,12 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Configuration;
 
+//Created by Jegan Boopathy
+
 namespace AASD_Data_Access_Layer.DataProvider
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class QueryRepository : IDataProvider
-    //  public class QueryRepository : IQueryData
     {
 
+        /// <summary>
+        /// Insert records into the table
+        /// </summary>
+        /// <param name="queryData"></param>
+        /// <returns></returns>
         public int insertData(object queryData)
         {
             try
@@ -21,7 +30,8 @@ namespace AASD_Data_Access_Layer.DataProvider
                 {
                     throw new ArgumentNullException("Empty input");
                 }
-                AASD_DBEntities queryObject = new AASD_DBEntities();
+                
+                AASD_DBEntities1 queryObject = new AASD_DBEntities1();
                 queryObject.AASD_DB_Query.Add((AASD_DB_Query)queryData);
                 return queryObject.SaveChanges();
             }
@@ -31,6 +41,11 @@ namespace AASD_Data_Access_Layer.DataProvider
             }
         }
 
+        /// <summary>
+        /// delete records in the table
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public int deleteData(Guid id)
         {
             try
@@ -39,7 +54,7 @@ namespace AASD_Data_Access_Layer.DataProvider
                 {
                     throw new ArgumentNullException("id");
                 }
-                AASD_DBEntities queryObject = new AASD_DBEntities();
+                AASD_DBEntities1 queryObject = new AASD_DBEntities1();
                 AASD_DB_Result deleteResult = queryObject.AASD_DB_Result.Single(query => query.Query_Id == id);
                 AASD_DB_Query deleteQuery = queryObject.AASD_DB_Query.Single(query => query.Query_Id == id);
                 queryObject.AASD_DB_Result.Remove(deleteResult);
@@ -52,6 +67,12 @@ namespace AASD_Data_Access_Layer.DataProvider
             }
         }
 
+
+        /// <summary>
+        /// Retrieve records from table
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IList<object> showData(Guid id)
         {
             try
@@ -61,7 +82,7 @@ namespace AASD_Data_Access_Layer.DataProvider
                 {
                     throw new ArgumentNullException("id");
                 }
-                AASD_DBEntities queryObject = new AASD_DBEntities();
+                AASD_DBEntities1 queryObject = new AASD_DBEntities1();
                 var query = (from q in queryObject.AASD_DB_Query
                              where q.Query_Id == id
                              select q).First();

@@ -52,7 +52,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AASD_DBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="AASD_DBEntities" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="AASD_DBEntities1" p1:LazyLoadingEnabled="true">
           <EntitySet Name="AASD_DB_Query" EntityType="AASD_DBModel.AASD_DB_Query" />
           <EntitySet Name="AASD_DB_Result" EntityType="AASD_DBModel.AASD_DB_Result" />
           <AssociationSet Name="FK_AASD_DB_Result_AASD_DB_Query" Association="AASD_DBModel.FK_AASD_DB_Result_AASD_DB_Query">
@@ -101,7 +101,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AASD_DBModelStoreContainer" CdmEntityContainer="AASD_DBEntities">
+        <EntityContainerMapping StorageEntityContainer="AASD_DBModelStoreContainer" CdmEntityContainer="AASD_DBEntities1">
           <EntitySetMapping Name="AASD_DB_Query">
             <EntityTypeMapping TypeName="AASD_DBModel.AASD_DB_Query">
               <MappingFragment StoreEntitySet="AASD_DB_Query">

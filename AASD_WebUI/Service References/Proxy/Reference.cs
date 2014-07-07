@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace AASD_WebUI.Proxy {
-    
+    //<!--Created by Juhi gaba-->
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="AASD_Contracts/WebService", ConfigurationName="Proxy.IAASDService")]

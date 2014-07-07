@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AASD_Data_Access_Layer
+namespace AASD_Data_Access_Layer.DataProvider
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AASD_DBEntities : DbContext
+    public partial class AASD_DBEntities1 : DbContext
     {
-        public AASD_DBEntities()
-            : base("name=AASD_DBEntities")
+        public AASD_DBEntities1()
+            : base("name=AASD_DBEntities1")
         {
         }
     
@@ -25,7 +25,7 @@ namespace AASD_Data_Access_Layer
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AASD_DB_Query> AASD_DB_Query { get; set; }
-        public virtual DbSet<AASD_DB_Result> AASD_DB_Result { get; set; }
+        public DbSet<AASD_DB_Query> AASD_DB_Query { get; set; }
+        public DbSet<AASD_DB_Result> AASD_DB_Result { get; set; }
     }
 }

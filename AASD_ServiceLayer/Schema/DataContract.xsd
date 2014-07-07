@@ -7,6 +7,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:tns="AASD_Contracts/Data"
            >
+  <!--Created by Juhi gaba-->
   <xs:complexType name="QueryContract">
     <xs:sequence>
       <xs:element name="Query" type="xs:string" nillable="false"></xs:element>

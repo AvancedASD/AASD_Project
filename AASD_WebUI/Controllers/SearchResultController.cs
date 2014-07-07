@@ -9,6 +9,7 @@ using AASD_BuisnessLayer;
 using AASD_BuisnessLayer.BuisnessLayer_Models.Concrete.SearchEngines;
 using AASD_BuisnessLayer.Entities;
 
+///Created by Ivan
 namespace AASD_WebUI.Controllers
 {
     public class ResultRepository

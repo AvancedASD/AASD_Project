@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using AASD_Data_Access_Layer.DataProvider;
 
+//Created by Jegan Boopathy
+
 namespace AASD_Data_Access_Layer
 {
     class access
     {
         static void Main(string[] args)
         {
-            /*using (AASD_DBEntities aasd_DBEntities = new AASD_DBEntities() )
+            /*using (AASD_DBEntities1 aasd_DBEntities = new AASD_DBEntities1() )
             {
                 var l = from e in aasd_DBEntities.AASD_DB_Query
                         select e;

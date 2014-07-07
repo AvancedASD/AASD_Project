@@ -7,6 +7,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:data="AASD_Contracts/Data"
 >
+  <!--Created by Juhi gaba-->
   <xs:import namespace="AASD_Contracts/Data" schemaLocation="DataContract.xsd"></xs:import>
 
   <xs:element name="RetrieveSearchRequest">

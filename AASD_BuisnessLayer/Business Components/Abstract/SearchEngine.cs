@@ -5,7 +5,7 @@ using System.Text;
 using AASD_BuisnessLayer.BusinessGateways;
 using AASD_BuisnessLayer.Entities;
 using AASD_BuisnessLayer.Enumeration;
-
+///Created by Arun
 namespace AASD_BuisnessLayer.BuisnessLayer_Models.Abstract
 {
     public abstract class SearchEngine : ISearchBehaviour, IFilterBehavior, IDisplayBehaviour
@@ -96,8 +96,6 @@ namespace AASD_BuisnessLayer.BuisnessLayer_Models.Abstract
 
                     }
                 }
-
-                //Console.WriteLine(re.Url + "\n" + re.ResultId + "\n" + re.ResulType + "\n" + re.QueryId + "\n" + re.Description);
             }
 
             return filteredResults;

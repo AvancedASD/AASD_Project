@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Configuration;
 using AASD_FreeBaseApiServiceAgent.DataContractJSon;
-//using Google.Apis.Freebase.v1;
-//using Google.Apis.Services;
-//using Google.Apis.Requests;
 using Freebase4net;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Dynamic;
 using AAASD_TraceLayer.Concrete;
+using NLog;
 
+///Created by Santosh 
 namespace AASD_FreeBaseApiServiceAgent
 {
     public class FreeBaseAPI

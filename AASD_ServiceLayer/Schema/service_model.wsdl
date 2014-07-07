@@ -4,6 +4,7 @@
              xmlns:msg="AASD_Contracts/Message"
              targetNamespace="AASD_Contracts/WebService"
   name="AASDService" xmlns="http://schemas.xmlsoap.org/wsdl/" >
+  <!--Created by Juhi gaba-->
   <types>
     <xsd:schema>
       <xsd:import namespace="AASD_Contracts/Message" schemaLocation="MessageContract.xsd"  />

@@ -55,51 +55,52 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="App.config">
+    <EmbeddedResource Include="App.config">
       <SubType>Designer</SubType>
-    </Content>
-    <EntityDeploy Include="AASD_DBEntity.edmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EntityDeploy Include="DataProvider\AASD_Entites.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AASD_DBEntity.Designer.cs</LastGenOutput>
+      <LastGenOutput>AASD_Entites.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="AASD_DBEntity.Context.tt">
+    <None Include="DataProvider\AASD_Entites.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AASD_DBEntity.edmx</DependentUpon>
-      <LastGenOutput>AASD_DBEntity.Context.cs</LastGenOutput>
+      <DependentUpon>AASD_Entites.edmx</DependentUpon>
+      <LastGenOutput>AASD_Entites.Context.cs</LastGenOutput>
     </None>
-    <None Include="AASD_DBEntity.edmx.diagram">
-      <DependentUpon>AASD_DBEntity.edmx</DependentUpon>
+    <None Include="DataProvider\AASD_Entites.edmx.diagram">
+      <DependentUpon>AASD_Entites.edmx</DependentUpon>
     </None>
-    <None Include="AASD_DBEntity.tt">
+    <None Include="DataProvider\AASD_Entites.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AASD_DBEntity.edmx</DependentUpon>
-      <LastGenOutput>AASD_DBEntity.cs</LastGenOutput>
+      <DependentUpon>AASD_Entites.edmx</DependentUpon>
+      <LastGenOutput>AASD_Entites.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AASD_DBEntity.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AASD_DBEntity.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AASD_DBEntity.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AASD_DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AASD_DBEntity.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AASD_DBEntity.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="AASD_DB_Query.cs">
-      <DependentUpon>AASD_DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AASD_DB_Result.cs">
-      <DependentUpon>AASD_DBEntity.tt</DependentUpon>
-    </Compile>
     <Compile Include="access.cs" />
+    <Compile Include="DataProvider\AASD_DB_Query.cs">
+      <DependentUpon>AASD_Entites.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataProvider\AASD_DB_Result.cs">
+      <DependentUpon>AASD_Entites.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataProvider\AASD_Entites.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AASD_Entites.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataProvider\AASD_Entites.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AASD_Entites.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataProvider\AASD_Entites.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AASD_Entites.edmx</DependentUpon>
+    </Compile>
     <Compile Include="DataProvider\ResultRepository.cs" />
     <Compile Include="DataProvider\QueryRepository.cs" />
     <Compile Include="DataProvider\IResultData.cs" />
@@ -121,6 +122,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />

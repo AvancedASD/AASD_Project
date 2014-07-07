@@ -9,7 +9,7 @@ using AASD_BingAPIService.Class;
 using System.Configuration;
 using AAASD_TraceLayer.Concrete;
 using NLog;
-
+///Created By Santosh
 namespace AASD_BingAPIService
 {
     public class BingSearchAPi
