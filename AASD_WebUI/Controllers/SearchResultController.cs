@@ -11,34 +11,23 @@ using AASD_BuisnessLayer.Entities;
 
 ///Created by Ivan
 namespace AASD_WebUI.Controllers
-{
-    public class ResultRepository
-    {
-       
-    }
+{ 
 
 
     public class SearchResultController : Controller
     {
         private int pageSize = 10;
         private IAASDService _service;
-        // private ResultRepository resultRepository;
-
-
-        //Have to use interface and mock
+      
         public SearchResultController(IAASDService service)
-        {
-            //resultRepository = new ResultRepository();
+        {           
             _service = service;
         }
 
 
         [OutputCache(Duration = 30)]
         public ActionResult List(string query = "", string context = "", int page = 1)
-        {
-            //Test
-            if (query == null)
-                throw new NullReferenceException();
+        {           
 
             if (query == String.Empty)
             {
@@ -54,24 +43,7 @@ namespace AASD_WebUI.Controllers
             RetrieveSearchRequest1 inValue = new RetrieveSearchRequest1();
             inValue.RetrieveSearchRequest = retrieveSearchRequest;
 
-            //SearchEngine_Standart c = new SearchEngine_Standart();
-            //AASD_BuisnessLayer.Entities.Query f = new AASD_BuisnessLayer.Entities.Query()
-            //{
-            //    Adult = string.Empty,
-            //    Context = "Product",
-            //    Latitude = string.Empty,
-            //    Longitude = string.Empty,
-            //    Market = "en-us",
-            //    Options = string.Empty,
-            //    QueryId = Guid.NewGuid(),
-            //    SearchQuery = "Apple",
-            //    WebFileType = string.Empty,
-            //    WebSearchOptions = string.Empty,
-            //};
-
-            //IList<Display> display = null;
-            //display = c.ExecutingSearchEngine(f);
-
+           
             resultsListViewModel.results = _service.
                 RetrieveSearch(inValue).listResultContract.
                 Skip((page - 1) * pageSize).Take(pageSize);
@@ -89,7 +61,7 @@ namespace AASD_WebUI.Controllers
             {
                 return View("ServiceUnavailableError");
             }
-            // resultsListViewModel.currentQuery.stringQuery += DateTime.Now.ToString();
+        
             return View(resultsListViewModel);
         }
     }

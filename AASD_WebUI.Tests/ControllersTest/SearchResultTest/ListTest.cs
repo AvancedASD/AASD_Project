@@ -11,7 +11,7 @@ using System.Reflection;
 using System.Collections.Generic;
 using AASD_WebUI.Controllers;
 using AASD_WebUI.Proxy;
-
+//Created by Ivan
 namespace AASD_WebUI.ControllersTest.SearchResultTest
 {
     [TestClass]
@@ -25,7 +25,7 @@ namespace AASD_WebUI.ControllersTest.SearchResultTest
             _listResultContract = new ResultContract[] {
             new ResultContract()
             {
-                Description="XXX", DisplayUrl = "google.com", Title = "Hot", Url = "www.google.com"
+                Description="Test", DisplayUrl = "google.com", Title = "Test", Url = "www.google.com"
             },
             new ResultContract() 
              {

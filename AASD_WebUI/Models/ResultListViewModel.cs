@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using AASD_WebUI.Proxy;
-
+//Created by Ivan
 namespace AASD_WebUI.Models
 {
     public class ResultListViewModel

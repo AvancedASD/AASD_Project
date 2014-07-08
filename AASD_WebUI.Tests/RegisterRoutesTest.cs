@@ -18,8 +18,7 @@ namespace AASD_WebUI.Tests
     {
         private HttpContextBase CreateHttpContext(string targetUrl = null,
     string httpMethod = "GET")
-        {
-           
+        {           
             // create the mock request
             Mock<HttpRequestBase> mockRequest = new Mock<HttpRequestBase>();
             mockRequest.Setup(m => m.AppRelativeCurrentExecutionFilePath).Returns(targetUrl);
